@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { List, X } from "lucide-react";
-
-import { FiCodesandbox } from "react-icons/fi";
-import Searchbar from "../partials/Searchbar";
 import SidebarItems from "../partials/SidebarItems";
 
 const Sidebar = ({ theme }) => {
@@ -31,16 +28,7 @@ const Sidebar = ({ theme }) => {
           overflowY: "auto"
         }}
       >
-        <div className="mb-4 d-flex align-items-center justify-content-center flex-wrap">
-          <h6 className="text-center text-secondary text-uppercase fw-bold">
-            <FiCodesandbox size={30} className="mb-2 me-1" />
-            Devio Sandbox
-          </h6>
-          <div className="w-100">
-            <Searchbar theme={theme} />
-          </div>
-        </div>
-        <SidebarItems isDark={isDark}/>
+        <SidebarItems isDark={isDark} theme={theme}/>
       </div>
     </div>
   );

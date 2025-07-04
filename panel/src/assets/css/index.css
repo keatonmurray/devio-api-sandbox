@@ -42,7 +42,7 @@ input:focus {
   border-color: #6c757d;
 }
 
-.sidebar svg {
+.sidebar-items-container svg {
   color: var(--bs-highlight-color);
   font-size: 25px;
 }

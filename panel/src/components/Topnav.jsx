@@ -66,7 +66,7 @@ const TopNav = ({ theme, toggleTheme }) => {
           className={`custom-offcanvas ${isDark ? "bg-dark text-white" : "bg-white text-dark"}`}
         >
           <Nav className="flex-column p-3">
-            <SidebarItems isDark={isDark} />
+            <SidebarItems isDark={isDark} theme={theme}/>
             <Nav.Link href="#" className="text-secondary">Developer Docs</Nav.Link>
             <Nav.Link href="#" className="text-secondary">Support</Nav.Link>
             <Form.Check
