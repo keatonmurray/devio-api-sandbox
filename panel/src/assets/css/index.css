@@ -3,6 +3,7 @@
   --bs-body-background-color: #f7f6ff;
   --bs-body-background-none: #fff;
   --bs-button-primary: #6644ff;
+  --bs-highlight-color: #4e5ba6;
 }
 
 html, body {
@@ -39,4 +40,33 @@ input:focus {
 
 .border-secondary {
   border-color: #6c757d;
+}
+
+.sidebar svg {
+  color: var(--bs-highlight-color);
+  font-size: 25px;
+}
+
+.form-switch .form-check-input {
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%234e5ba6'/%3e%3c/svg%3e") !important;
+  width: 3em;
+  margin-left: -2.5em;
+  background-image: var(--bs-form-switch-bg);
+  background-position: left center;
+  border-radius: 2em;
+  transition: background-position .15s ease-in-out;
+  padding: 13px;
+}
+
+.form-check-input:checked {
+  background-color: #83a2d0;
+  border: 0 !important;
+}
+
+.navbar-toggler {
+  border: 0 !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: unset !important;
 }

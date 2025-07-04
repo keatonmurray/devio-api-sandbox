@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { List, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import Searchbar from "../partials/Searchbar";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FiBox } from "react-icons/fi";
 import { FaAffiliatetheme } from "react-icons/fa";
 import { AiFillApi } from "react-icons/ai";
 import { RiStore2Fill } from "react-icons/ri";
+import { FiCodesandbox } from "react-icons/fi";
+import Searchbar from "../partials/Searchbar";
 
 const Sidebar = ({ theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const Sidebar = ({ theme }) => {
   const bgClass = isDark ? "bg-dark" : "bg-white";
 
   return (
-    <>
+    <div className="sidebar">
       <div className="d-md-none p-2">
         <button
           className="btn btn-outline-primary d-md-block d-none"
@@ -39,11 +40,17 @@ const Sidebar = ({ theme }) => {
 
       <div
         className={`border-end ${isDark ? "border-secondary" : "navbar-light"} p-3 ${bgClass} ${isOpen ? "d-block" : "d-none"} d-md-block`}
-        style={{ minWidth: "250px", height: "auto" }}
+        style={{ minWidth: "250px", height: "100vh" }}
         >
-        <h5 className="mb-4">
-          <Searchbar theme={theme} />
-        </h5>
+        <div className="mb-4 d-flex align-items-center justify-content-center flex-wrap">
+          <h6 className="text-center text-secondary text-uppercase fw-bold">
+            <FiCodesandbox size={30} className="mb-2 me-1" />
+            Devio Sandbox
+          </h6>
+          <div className="w-100">
+            <Searchbar theme={theme} />
+          </div>
+        </div>
         <ul className="nav flex-column">
 
           {/* Website */}
@@ -149,7 +156,7 @@ const Sidebar = ({ theme }) => {
 
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

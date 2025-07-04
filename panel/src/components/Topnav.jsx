@@ -21,19 +21,27 @@ const TopNav = ({ theme, toggleTheme }) => {
             />
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="devio-navbar" />
+        <div className="d-flex align-items-center justify-content-center">
+          <Form.Check
+              type="switch"
+              id="dark-mode-toggle"
+              checked={isDark}
+              onChange={toggleTheme}
+              className="ms-3 d-md-none d-block"
+            />
+          <Navbar.Toggle aria-controls="devio-navbar" className="mt-1" />
+        </div>
 
         <Navbar.Collapse id="devio-navbar">
           <Nav className="ms-auto align-items-center">
             <Nav.Link href="#">Developer Docs</Nav.Link>
             <Nav.Link href="#">Support</Nav.Link>
-
             <Form.Check
               type="switch"
               id="dark-mode-toggle"
               checked={isDark}
               onChange={toggleTheme}
-              className="ms-3"
+              className="ms-3 d-md-block d-none"
             />
           </Nav>
         </Navbar.Collapse>
