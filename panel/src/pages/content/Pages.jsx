@@ -35,7 +35,7 @@ const Pages = ({isDark}) => {
               <div className="card-body d-flex align-items-center justify-content-start gap-3">
                 <MdDragIndicator size="30" cursor="pointer" className={`indicator-light ${isDark ? 'indicator-dark' : ''}`} />
                 <div className="flex-grow-1">
-                  <p className="fw-semibold mb-0 lh-sm blog-title">How to Build a Headless Blog with Payload CMS</p>
+                  <p className="fw-semibold mb-0 lh-sm blog-title">Homepage</p>
                 </div>
               </div>
             </div>
@@ -44,7 +44,7 @@ const Pages = ({isDark}) => {
               <div className="card-body d-flex align-items-center justify-content-start gap-3">
                 <MdDragIndicator size="30" cursor="pointer" className={`indicator-light ${isDark ? 'indicator-dark' : ''}`} />
                 <div className="flex-grow-1">
-                  <p className="fw-semibold mb-0 lh-sm blog-title">Mastering Content Modeling in Payload CMS</p>
+                  <p className="fw-semibold mb-0 lh-sm blog-title">Developer Documentation</p>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@ const Pages = ({isDark}) => {
               <div className="card-body d-flex align-items-center justify-content-start gap-3">
                 <MdDragIndicator size="30" cursor="pointer" className={`indicator-light ${isDark ? 'indicator-dark' : ''}`} />
                 <div className="flex-grow-1">
-                  <p className="fw-semibold mb-0 lh-sm blog-title">From Monolith to Headless: A Frontend Developer's Guide</p>
+                  <p className="fw-semibold mb-0 lh-sm blog-title">About Devio</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ const Pages = ({isDark}) => {
               <div className="card-body d-flex align-items-center justify-content-start gap-3">
                 <MdDragIndicator size="30" cursor="pointer" className={`indicator-light ${isDark ? 'indicator-dark' : ''}`} />
                 <div className="flex-grow-1">
-                  <p className="fw-semibold mb-0 lh-sm blog-title">Top 5 Payload CMS Features You’re Probably Not Using</p>
+                  <p className="fw-semibold mb-0 lh-sm blog-title">Contact Us</p>
                 </div>
               </div>
             </div>
