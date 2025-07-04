@@ -1,10 +1,27 @@
 :root {
-  --bs-body-font-family: 'Poppins', sans-serif;
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-background-color: #f7f6ff;
+  --bs-body-background-none: #fff;
+  --bs-button-primary: #6644ff;
 }
 
-body {
+html, body {
   margin: 0;
   font-family: var(--bs-body-font-family) !important;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
+
+.btn-primary {
+    background-color: var(--bs-button-primary) !important;
+    border: 0 !important;
+}
+
+.body-background-color {
+    background-color: var(--bs-body-background-color);
+}
+
+.body-background-none {
+    background-color: var(--bs-body-background-none);
+}
+
