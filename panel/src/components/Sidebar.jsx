@@ -10,7 +10,7 @@ const Sidebar = ({ theme }) => {
 
   return (
     <div className="sidebar">
-      <div className="d-md-none p-2">
+      <div className="d-md-none d-md-none p-md-2 p-0">
         <button
           className="btn btn-outline-primary d-md-block d-none"
           onClick={() => setIsOpen(!isOpen)}

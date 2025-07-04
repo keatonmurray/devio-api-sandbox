@@ -3,6 +3,7 @@
   --bs-body-background-color: #f7f6ff;
   --bs-body-background-none: #fff;
   --bs-button-primary: #6644ff;
+  --bs-button-secondary: #4e5ba6;
   --bs-highlight-color: #4e5ba6;
 }
 
@@ -15,6 +16,11 @@ html, body {
 
 .btn-primary {
     background-color: var(--bs-button-primary) !important;
+    border: 0 !important;
+}
+
+.btn-secondary {
+    background-color: var(--bs-button-secondary) !important;
     border: 0 !important;
 }
 
@@ -38,8 +44,28 @@ input:focus {
   opacity: 1; /* Ensure it's not semi-transparent */
 }
 
+.bg-card-light {
+  background-color: rgb(247, 247, 247) !important;
+}
+
+.bg-card-dark {
+  background-color: #2c3034 !important;
+}
+
+.bg-card-light {
+  background-color: #fff !important;
+}
+
+.indicator-light {
+  color: #646464 !important;
+}
+
+.indicator-dark {
+  color: #d8d8d8 !important;
+}
+
 .border-secondary {
-  border-color: #6c757d;
+  border-color: rgb(74, 74, 74) !important;
 }
 
 .sidebar-items-container svg {
@@ -112,4 +138,28 @@ input:focus {
 body.dark-mode .offcanvas-collapse {
   background-color: #1f1f1f;
   color: white;
+}
+
+.bg-secondary-faded {
+  background-color: rgba(108, 117, 125, 0.3); 
+}
+
+.pages .search-input {
+    width: 120px;
+    transition: width 0.3s ease;
+  }
+
+.pages .search-input:focus {
+  width: 240px;
+}
+
+@media (min-width: 768px) {
+  .pages .search-input {
+    width: 120px !important;
+    transition: width 0.3s ease;
+  }
+
+  .pages .search-input:focus {
+    width: 240px !important;
+  }
 }

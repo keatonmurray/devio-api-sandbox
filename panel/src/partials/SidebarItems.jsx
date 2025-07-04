@@ -124,7 +124,7 @@ const SidebarItems = ({isDark, theme}) => {
                     >
                         <span className="d-flex align-items-center gap-2">
                         <RiStore2Fill />
-                        Ecommerce
+                        Online Store
                         </span>
                         <MdKeyboardArrowDown />
                     </button>
