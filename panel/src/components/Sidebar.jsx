@@ -22,11 +22,11 @@ const Sidebar = ({ theme }) => {
 
       <div
         className={`sidebar-scroll border-end ${isDark ? "border-secondary" : "navbar-light"} p-3 ${bgClass} ${isOpen ? "d-block" : "d-none"} d-md-block`}
-        style={{
-          minWidth: "250px",
-          height: "100vh",
-          overflowY: "auto"
-        }}
+          style={{
+            minWidth: "250px",
+            height: "100vh",
+            overflowY: "auto"
+          }}
       >
         <SidebarItems isDark={isDark} theme={theme}/>
       </div>

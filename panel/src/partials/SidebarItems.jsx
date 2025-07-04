@@ -37,7 +37,8 @@ const SidebarItems = ({isDark, theme}) => {
             <ul className="nav flex-column">
                 {/* Website */}
                 <li className="nav-item">
-                    <button
+                    <Link
+                        to="/"
                         className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
                         onClick={() => toggleMenu("website")}
                     >
@@ -46,9 +47,13 @@ const SidebarItems = ({isDark, theme}) => {
                         Website
                         </span>
                         <MdKeyboardArrowDown />
-                    </button>
+                    </Link>
                     <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("website") ? "show" : ""}`}>
-                        <li className="nav-item"><Link to="#" className={`nav-link small fw-semibold ${textClass}`}>Pages</Link></li>
+                        <li className="nav-item">
+                            <Link to="/pages" className={`nav-link small fw-semibold ${textClass}`}>
+                                Pages
+                            </Link>
+                        </li>
                         <li className="nav-item">
                         <button
                             className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
@@ -60,6 +65,11 @@ const SidebarItems = ({isDark, theme}) => {
                         <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("posts") ? "show" : ""}`}>
                             <li className="nav-item">
                             <Link to="#" className={`nav-link small fw-semibold ${textClass}`}>Workflow</Link>
+                            </li>
+                        </ul>
+                         <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("posts") ? "show" : ""}`}>
+                            <li className="nav-item">
+                            <Link to="/blogs" className={`nav-link small fw-semibold ${textClass}`}>Blogs</Link>
                             </li>
                         </ul>
                         </li>

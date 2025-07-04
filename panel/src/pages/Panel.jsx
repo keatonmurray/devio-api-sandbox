@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import Sidebar from '../components/Sidebar';
 import Topnav from '../components/Topnav';
-import Pages from './content/Pages';
 
 const Panel = () => {
   const [theme, setTheme] = useState('light');
@@ -19,7 +19,9 @@ const Panel = () => {
 
       <div className="d-flex mt-4">
         <Sidebar theme={theme} />
-        <Pages isDark={isDark}/>
+        <div className="flex-grow-1 px-4">
+          <Outlet context={{ isDark }} />
+        </div>
       </div>
     </div>
   );
