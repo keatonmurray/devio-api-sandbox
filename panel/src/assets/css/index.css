@@ -70,3 +70,46 @@ input:focus {
 .navbar-toggler:focus {
   box-shadow: unset !important;
 }
+
+.sidebar-scroll {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  display: none; 
+}
+
+.offcanvas-collapse {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1045;
+  padding-top: 60px;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.custom-offcanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  z-index: 1050;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.offcanvas-collapse.show {
+  right: 0;
+}
+
+body.dark-mode .offcanvas-collapse {
+  background-color: #1f1f1f;
+  color: white;
+}
