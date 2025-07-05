@@ -172,3 +172,7 @@ body.dark-mode .offcanvas-collapse {
     width: 240px !important;
   }
 }
+
+.section-heading-title {
+  letter-spacing: 1.3;
+}

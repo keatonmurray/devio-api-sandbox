@@ -117,9 +117,8 @@ const SidebarItems = ({isDark, theme}) => {
                             <MdKeyboardArrowDown />
                         </button>
                         <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("plugins") ? "show" : ""}`}>
-                            <li className="nav-item"><Link to="#" className={`nav-link small fw-semibold ${textClass}`}>Forms</Link></li>
-                            <li className="nav-item"><Link to="#" className={`nav-link small fw-semibold ${textClass}`}>LMS</Link></li>
-                            <li className="nav-item"><Link to="#" className={`nav-link small fw-semibold ${textClass}`}>Ecommerce</Link></li>
+                            <li className="nav-item"><Link to="/plugin/paypal" className={`nav-link small fw-semibold ${textClass}`}>PayPal</Link></li>
+                            
                         </ul>
                         </li>
                     </ul>
