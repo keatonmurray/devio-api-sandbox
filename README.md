@@ -23,8 +23,8 @@ This project is your entry point to shaping how headless CMS admin panels **shou
 
 * **React** (Vite-powered)
 * **Bootstrap**
-* **Laravel** 
-* **GraphQL** 
+* **Laravel**
+* **GraphQL**
 * **Devio API** (mocked endpoints for now)
 
 ---
@@ -47,6 +47,20 @@ npm run dev
 We’re working on a live demo at: [sandbox.devio.app](https://sandbox.devio.app) *(coming soon)*
 
 ---
+
+## Project Previews
+
+<p align="center">
+  <img src="./public/landing-page.jpg" alt="Devio Landing Page Preview" width="800"/>
+  <br/>
+  <em>✨ Devio Landing Page – Clean and intuitive UI</em>
+</p>
+
+<p align="center">
+  <img src="./public/admin-panel.png" alt="Devio Landing Page Preview" width="800"/>
+  <br/>
+  <em>✨ Devio Admin Panel – Block-based UI with plugin backend</em>
+</p>
 
 ## 🛠️ Features
 
