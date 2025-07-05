@@ -4,6 +4,20 @@
 
 Welcome to the Devio Admin Panel Sandbox — an experimental playground for the Devio admin interface. This is an **open-source subproject** of [Devio CMS](https://github.com/keatonmurray/devio-api-sandbox) and serves as the central dashboard for content creators, developers, and teams using Devio to build fast, modern headless applications.
 
+## 🖼️ Project Previews
+
+<p align="center">
+  <img src="./public/landing-page.jpg" alt="Devio Landing Page Preview" width="800"/>
+  <br/>
+  <em>✨ Devio Landing Page – Clean and intuitive UI</em>
+</p>
+
+<p align="center">
+  <img src="./public/admin-panel.png" alt="Devio Landing Page Preview" width="800"/>
+  <br/>
+  <em>✨ Devio Admin Panel – Block-based UI with plugin backend</em>
+</p>
+
 ## ✨ Why This Exists
 
 While most headless CMSs provide content modeling, they stop short when it comes to **backend logic** like forms, carts, workflows, and authentication. Devio fills this gap with a **plugin-first backend** — and this sandbox is where we build and test the admin interface that powers it all.
@@ -47,20 +61,6 @@ npm run dev
 We’re working on a live demo at: [sandbox.devio.app](https://sandbox.devio.app) *(coming soon)*
 
 ---
-
-## Project Previews
-
-<p align="center">
-  <img src="./public/landing-page.jpg" alt="Devio Landing Page Preview" width="800"/>
-  <br/>
-  <em>✨ Devio Landing Page – Clean and intuitive UI</em>
-</p>
-
-<p align="center">
-  <img src="./public/admin-panel.png" alt="Devio Landing Page Preview" width="800"/>
-  <br/>
-  <em>✨ Devio Admin Panel – Block-based UI with plugin backend</em>
-</p>
 
 ## 🛠️ Features
 
