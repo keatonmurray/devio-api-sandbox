@@ -24,7 +24,7 @@ const SidebarItems = ({isDark, theme}) => {
     const textClass = isDark ? "text-white" : "text-dark";
 
     return (
-        <div className="sidebar-items-container">
+        <div className="sidebar-items-container mt-4">
             <div className="mb-4 d-flex align-items-center justify-content-center flex-wrap">
                 <h6 className="text-center text-secondary text-uppercase fw-bold">
                     <FiCodesandbox size={30} className="mb-2 me-1" />
@@ -37,8 +37,7 @@ const SidebarItems = ({isDark, theme}) => {
             <ul className="nav flex-column">
                 {/* Website */}
                 <li className="nav-item">
-                    <Link
-                        to="/"
+                    <button
                         className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
                         onClick={() => toggleMenu("website")}
                     >
@@ -47,7 +46,7 @@ const SidebarItems = ({isDark, theme}) => {
                         Website
                         </span>
                         <MdKeyboardArrowDown />
-                    </Link>
+                    </button>
                     <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("website") ? "show" : ""}`}>
                         <li className="nav-item">
                             <Link to="/pages" className={`nav-link small fw-semibold ${textClass}`}>

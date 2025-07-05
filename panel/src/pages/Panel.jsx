@@ -17,9 +17,9 @@ const Panel = () => {
     <div className={`${isDark ? 'bg-dark text-white' : 'bg-white text-dark'}`} style={{ minHeight: '100vh' }}>
       <Topnav theme={theme} toggleTheme={toggleTheme} />
 
-      <div className="d-flex mt-4">
+      <div className="d-flex">
         <Sidebar theme={theme} />
-        <div className="flex-grow-1 px-4">
+        <div className="flex-grow-1 mt-4">
           <Outlet context={{ isDark }} />
         </div>
       </div>

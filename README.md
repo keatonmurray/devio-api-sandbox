@@ -1,61 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚧 Devio Admin Panel Sandbox
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**The modern admin panel for Devio — an open-source headless CMS built for speed, structure, and scalability.**
 
-## About Laravel
+Welcome to the Devio Admin Panel Sandbox — an experimental playground for the Devio admin interface. This is an **open-source subproject** of [Devio CMS](https://github.com/keatonmurray/devio-api-sandbox) and serves as the central dashboard for content creators, developers, and teams using Devio to build fast, modern headless applications.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Why This Exists
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+While most headless CMSs provide content modeling, they stop short when it comes to **backend logic** like forms, carts, workflows, and authentication. Devio fills this gap with a **plugin-first backend** — and this sandbox is where we build and test the admin interface that powers it all.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Think:
 
-## Learning Laravel
+* **Drag-and-drop block-based UI**
+* **Schema-driven content modeling**
+* **Plugin-powered backend workflows**
+* **Instant preview and deploy-ready frontends**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+This project is your entry point to shaping how headless CMS admin panels **should work** in 2025 and beyond.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🧱 Tech Stack
 
-## Laravel Sponsors
+* **React** (Vite-powered)
+* **Bootstrap**
+* **Laravel** 
+* **GraphQL** 
+* **Devio API** (mocked endpoints for now)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Getting Started
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone git@github.com:keatonmurray/devio-api-sandbox.git
+cd devio-api-sandbox/api
+npm install
+npm run dev
+```
 
-## Contributing
+> You’ll be running the Devio Admin Panel locally with mocked API endpoints. Real plugin integration coming soon.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🌍 Live Demo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+We’re working on a live demo at: [sandbox.devio.app](https://sandbox.devio.app) *(coming soon)*
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🛠️ Features
 
-## License
+* ✅ Drag-and-drop page builder
+* ✅ Content model creator
+* ✅ Plugin mock system (auth, checkout, forms)
+* ✅ Dark/light theme toggle
+* ✅ Component-based layout system
+* 🔜 Role-based permissions
+* 🔜 Plugin marketplace UI
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🧪 Roadmap
+
+* [ ] Real-time backend plugin preview
+* [ ] Inline API sandbox (like Swagger + Postman for plugins)
+* [ ] One-click deploy to Vercel/Netlify
+* [ ] Auth + RBAC integration
+* [ ] Docs auto-generation from plugin schema
+* [ ] Plugin versioning support
+
+---
+
+## 🤝 Contributing
+
+We’re looking for contributors who want to **reimagine the CMS admin experience**. Designers, frontend devs, backend plugin creators — all are welcome.
+
+### 📂 Good First Issues
+
+* [ ] Component testing with Vitest
+* [ ] Plugin card UI design
+* [ ] Plugin sandbox API stubs
+* [ ] Content model validation rules
+
+### 🧑‍💻 How to Contribute
+
+```bash
+git checkout -b contribution
+npm run dev
+```
+
+Make your changes, commit, push to your fork, and open a Pull Request. Be sure to link to any related issue in your PR description.
+
+---
+
+## 💬 Join the Community
+
+* 💬 [Discord](https://discord.gg/devio) — Discuss architecture, integrations, plugins
+* 🐦 [Twitter](https://twitter.com/deviohq) — Get updates
+
+---
+
+## 📄 License
+
+MIT © [Keaton Murray](https://github.com/keatonmurray)
+
+Devio is an ongoing open-source project — contributions welcome.
+
+---
+
+> “Everything WordPress got right — but decoupled, developer-first, and ready for the modern stack.” 🚀

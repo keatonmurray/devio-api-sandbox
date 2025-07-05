@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, Container, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import SidebarItems from "../partials/SidebarItems";
 
 const TopNav = ({ theme, toggleTheme }) => {
@@ -31,15 +32,17 @@ const TopNav = ({ theme, toggleTheme }) => {
         className={`border-bottom ${isDark ? "border-secondary" : "navbar-light"}`}
       >
         <Container fluid>
-          <Navbar.Brand href="#" className={`fw-bold ${isDark ? "text-white" : "text-primary"}`}>
-            <img
-              src={isDark ? "/images/logo-inverted.png" : "/images/logo.png"}
-              alt="Devio Logo"
-              width="50"
-              height="50"
-              className="d-inline-block align-top me-2"
-            />
-          </Navbar.Brand>
+          <Link to="/">
+            <Navbar.Brand className={`fw-bold ${isDark ? "text-white" : "text-primary"}`}>
+              <img
+                src={isDark ? "/images/logo-inverted.png" : "/images/logo.png"}
+                alt="Devio Logo"
+                width="50"
+                height="50"
+                className="d-inline-block align-top me-2"
+              />
+            </Navbar.Brand>
+          </Link>
 
           <div className="d-flex align-items-center justify-content-center gap-2">
             <Nav.Link href="#" className="text-secondary d-md-block d-none">Developer Docs</Nav.Link>
