@@ -78,11 +78,11 @@ return [
                 // ExampleQuery::class,
             ],
             'mutation' => [
-                // ExampleMutation::class,
+                'connectPaypal' => \App\GraphQL\Mutations\ConnectPaypalMutation::class,
             ],
             // The types only available in this schema
             'types' => [
-                // ExampleType::class,
+                'ConnectPaypalResponse' => \App\GraphQL\Types\ConnectPaypalResponseType::class,
             ],
 
             // Laravel HTTP middleware
