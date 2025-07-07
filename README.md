@@ -23,7 +23,7 @@ Unlike other emerging plug-and-play CMS platforms — where all plugins are inte
 <p align="center">
   <img src="./public/paypal-config.png" alt="PayPal Config Dashboard" width="800"/>
   <br/>
-  <em>✨ Devio Admin Panel – Block-based UI with plugin backend</em>
+  <em>✨ Devio PayPal Configuration Panel – PayPal-integrated Panel</em>
 </p>
 
 ## ✨ Why This Exists
