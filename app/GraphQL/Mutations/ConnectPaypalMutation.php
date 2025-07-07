@@ -5,7 +5,7 @@ namespace App\GraphQL\Mutations;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 use Rebing\GraphQL\Support\Facades\GraphQL;
-use GraphQL\Type\Definition\ResolveInfo;
+use App\Http\Controllers\Plugins\PayPalController;
 
 class ConnectPaypalMutation extends Mutation
 {
@@ -27,15 +27,28 @@ class ConnectPaypalMutation extends Mutation
             'clientSecret' => [
                 'type' => Type::nonNull(Type::string()),
             ],
+            'mode' => [
+                'type' => Type::nonNull(Type::string())
+            ],
         ];
     }
 
-    public function resolve($root, $args, $context, ResolveInfo $info)
+    public function resolve($root, $args)
     {
+        $request = new \Illuminate\Http\Request();
+        $request->replace([
+            'client_id' => $args['clientId'],
+            'secret' => $args['clientSecret'],
+            'mode' => $args['mode'] ?? 'sandbox',
+        ]);
+
+        $response = app(PayPalController::class)
+            ->savePayPalAPIUserCredentials($request);
 
         return [
-            'success' => true,
-            'message' => 'Mocked response — PayPal connected',
+            'success' => $response->getStatusCode() === 201,
+            'message' => json_decode($response->getContent())->message,
         ];
     }
+
 }
