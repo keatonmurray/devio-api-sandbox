@@ -125,6 +125,12 @@ Make your changes, commit, push to your fork, and open a Pull Request. Be sure t
 
 ---
 
+## 📄 More Info
+
+Contact me at murraykeaton422@gmail.com
+
+---
+
 ## 📄 License
 
 MIT © [Keaton Murray](https://github.com/keatonmurray)
