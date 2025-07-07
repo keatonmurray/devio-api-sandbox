@@ -2,7 +2,9 @@
 
 **The modern admin panel for Devio — an open-source headless CMS built for speed, structure, and scalability.**
 
-Welcome to the Devio Admin Panel Sandbox — an experimental playground for the Devio admin interface. This is an **open-source subproject** of [Devio CMS](https://github.com/keatonmurray/devio-api-sandbox) and serves as the central dashboard for content creators, developers, and teams using Devio to build fast, modern headless applications.
+Devio is a headless CMS platform inspired by WordPress' plugin ecosystem. Headless CMSs today help modernize development and improve frontend flexibility — but they’re often slower to build with than traditional platforms. Devio solves this with a plugin-driven architecture, making it plug-and-play for use cases like eCommerce, LMS, SaaS, and more.
+
+Unlike other emerging plug-and-play CMS platforms — where all plugins are internally developed — Devio is designed to be a hub for indie developers to create, share, and monetize their own plugins. Think of it as the modern, headless WordPress for today's web builders.
 
 ## 🖼️ Project Previews
 
@@ -18,9 +20,15 @@ Welcome to the Devio Admin Panel Sandbox — an experimental playground for the 
   <em>✨ Devio Admin Panel – Block-based UI with plugin backend</em>
 </p>
 
+<p align="center">
+  <img src="./public/paypal-config.png" alt="PayPal Config Dashboard" width="800"/>
+  <br/>
+  <em>✨ Devio Admin Panel – Block-based UI with plugin backend</em>
+</p>
+
 ## ✨ Why This Exists
 
-While most headless CMSs provide content modeling, they stop short when it comes to **backend logic** like forms, carts, workflows, and authentication. Devio fills this gap with a **plugin-first backend** — and this sandbox is where we build and test the admin interface that powers it all.
+Most headless CMSs provide content modeling, but they stop short when it comes to **backend logic**. Dev teams need to re-implement backend logic such as cart, order-processing, authentication, and more.
 
 Think:
 
@@ -47,7 +55,10 @@ This project is your entry point to shaping how headless CMS admin panels **shou
 
 ```bash
 git clone git@github.com:keatonmurray/devio-api-sandbox.git
-cd devio-api-sandbox/api
+cd /api
+npm install
+php artisan serve
+cd /api/panel
 npm install
 npm run dev
 ```
@@ -118,7 +129,7 @@ Make your changes, commit, push to your fork, and open a Pull Request. Be sure t
 
 MIT © [Keaton Murray](https://github.com/keatonmurray)
 
-Devio is an ongoing open-source project — contributions welcome.
+Devio is an ongoing open-source project — contributions and  discussions welcome.
 
 ---
 

@@ -9,6 +9,7 @@
         "php": "^8.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "nuwave/lighthouse": "^6.61",
         "rebing/graphql-laravel": "^9.10"
     },
     "require-dev": {

@@ -1,7 +1,5 @@
 <?php
 
+use App\Http\Controllers\plugins\PayPalController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
