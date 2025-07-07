@@ -25,7 +25,7 @@ const Searchbar = ({ theme }) => {
           placeholder="Global Search"
         />
         <div
-          className="position-absolute top-50 end-0 translate-middle-y me-2 px-2 py-1 rounded small"
+          className="position-absolute top-50 end-0 translate-middle-y me-1 px-2 py-1 rounded small"
           style={{
             backgroundColor: theme === 'dark' ? '#2c2f36' : '#f1f3f5',
             color: theme === 'dark' ? '#ced4da' : '#6c757d',
