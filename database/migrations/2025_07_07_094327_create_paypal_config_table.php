@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('mode')->default('sandbox');
             $table->timestamps();
         });
-
     }
 
     /**
