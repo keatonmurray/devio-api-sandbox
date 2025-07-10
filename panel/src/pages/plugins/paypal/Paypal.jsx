@@ -1,16 +1,23 @@
 import SectionHeader from "../../../partials/SectionHeader";
 import { useOutletContext } from "react-router-dom";
-import { useState } from "react";
-import { connectPayPal as query } from "../../../graphql/mutations/connectPaypal";
+import { useState, useEffect } from "react";
+import { connectPayPal as mutation } from "../../../graphql/mutations/connectPaypal";
+import axios from 'axios'
 
 const Paypal = () => {
     const { isDark } = useOutletContext();
     const [isLive, setIsLive] = useState(false);
     const [clientId, setClientId] = useState("");
     const [clientSecret, setClientSecret] = useState("");
+    const [apiEndpointUrl, setapiEndpointUrl] = useState("");
     const [loading, setLoading] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
+
+    useEffect(() => {
+        const url = `${isLive ? "https://api.paypal.com" : "https://api.sandbox.paypal.com"}/v1/payments/`;
+        setapiEndpointUrl(url);
+    }, [isLive]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,29 +30,17 @@ const Paypal = () => {
         const variables = {
             clientId,
             clientSecret,
-            mode
+            mode,
+            apiEndpointUrl
         };
 
         try {
-            const response = await fetch(import.meta.env.VITE_DEVIO_API, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                },
-                body: JSON.stringify({ query, variables })
+            await axios.post(import.meta.env.VITE_DEVIO_API, {
+                query: mutation,
+                variables
             });
-
-            const json = await response.json();
-
-            if (json.data?.connectPaypal?.success) {
-                setSuccessMsg(json.data.connectPaypal.message);
-            } else {
-                const err = json.errors?.[0]?.message || "Unknown error occurred.";
-                setErrorMsg(err);
-            }
-        } catch (err) {
-            setErrorMsg("Network error: " + err.message);
+        } catch (error) {
+            console.error(error);
         } finally {
             setLoading(false);
         }
@@ -114,8 +109,7 @@ const Paypal = () => {
                             type="text"
                             className={`form-control ${isDark ? "bg-card-dark text-white" : ""}`}
                             id="apiEndpoint"
-                            value={`${isLive ? "https://api.paypal.com" : "https://api.sandbox.paypal.com"}/v1/payments/`}
-                            disabled
+                            value={apiEndpointUrl}
                             readOnly
                         />
                     </div>

@@ -30,6 +30,7 @@ class ConnectPaypalMutation extends Mutation
             'mode' => [
                 'type' => Type::nonNull(Type::string())
             ],
+            'apiEndpointUrl' => Type::nonNull(Type::string())
         ];
     }
 
@@ -40,6 +41,7 @@ class ConnectPaypalMutation extends Mutation
             'client_id' => $args['clientId'],
             'secret' => $args['clientSecret'],
             'mode' => $args['mode'] ?? 'sandbox',
+            'api_endpoint_url' => $args['apiEndpointUrl'],
         ]);
 
         $response = app(PayPalController::class)

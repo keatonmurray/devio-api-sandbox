@@ -14,6 +14,7 @@ class PayPalController extends Controller
             'client_id' => 'required|string|max:255',
             'secret' => 'required|string|max:255',
             'mode' => 'required|in:sandbox,live',
+            'api_endpoint_url' => 'required|string'
         ]);
 
         Paypal::create($data);
