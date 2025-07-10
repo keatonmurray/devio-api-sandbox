@@ -8,16 +8,27 @@ use App\Models\Plugins\PayPal;
 
 class PayPalController extends Controller
 {
-    public function savePayPalAPIUserCredentials(Request $request)
+   public function savePayPalAPIUserCredentials(Request $request)
     {
         $data = $request->validate([
-            'client_id' => 'required|string|max:255',
-            'secret' => 'required|string|max:255',
+            'client_id' => 'required|string',
+            'secret' => 'required|string',
             'mode' => 'required|in:sandbox,live',
             'api_endpoint_url' => 'required|string'
         ]);
 
-        Paypal::create($data);
-        return response()->json(['message' => 'Configurations saved!'], 201);
+        $existing = Paypal::all();
+
+        $matchingRecord = $existing->first(function ($record) use ($data) {
+            return decrypt($record->client_id) === $data['client_id'];
+        });
+
+        if ($matchingRecord) {
+            $matchingRecord->update($data);
+            return response()->json(['message' => 'Your configurations have been updated successfully!'], 200);
+        } else {
+            Paypal::create($data);
+            return response()->json(['message' => 'Your configurations have been saved successfully!'], 201);
+        }
     }
 }

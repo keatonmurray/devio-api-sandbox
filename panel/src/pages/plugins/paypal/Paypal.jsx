@@ -40,8 +40,8 @@ const Paypal = () => {
                 variables
             });
             setSuccessMsg(response.data.data.connectPaypal.message)
-        } catch (error) {
-            setErrorMsg(response.data.data.connectPaypal.error)
+        } catch (errors) {
+            console.log(errors.message)
         } finally {
             setLoading(false);
         }
