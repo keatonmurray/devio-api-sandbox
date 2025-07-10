@@ -17,6 +17,6 @@ class PayPalController extends Controller
         ]);
 
         Paypal::create($data);
-        return response()->json(['message' => 'PayPal configuration saved successfully.'], 201);
+        return response()->json(['message' => 'Configurations saved!'], 201);
     }
 }
