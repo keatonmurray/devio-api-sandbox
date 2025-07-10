@@ -2,6 +2,7 @@ import SectionHeader from "../../../partials/SectionHeader";
 import { useOutletContext } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { connectPayPal as mutation } from "../../../graphql/mutations/connectPaypal";
+import Alert from '@mui/material/Alert';
 import axios from 'axios'
 
 const Paypal = () => {
@@ -33,14 +34,14 @@ const Paypal = () => {
             mode,
             apiEndpointUrl
         };
-
         try {
-            await axios.post(import.meta.env.VITE_DEVIO_API, {
+            const response = await axios.post(import.meta.env.VITE_DEVIO_API, {
                 query: mutation,
                 variables
             });
+            setSuccessMsg(response.data.data.connectPaypal.message)
         } catch (error) {
-            console.error(error);
+            setErrorMsg(response.data.data.connectPaypal.error)
         } finally {
             setLoading(false);
         }
@@ -56,10 +57,10 @@ const Paypal = () => {
             </div>
 
             {successMsg && (
-                <div className="alert alert-success mt-3">{successMsg}</div>
+               <Alert severity="success">{successMsg}</Alert>
             )}
             {errorMsg && (
-                <div className="alert alert-danger mt-3">{errorMsg}</div>
+                <Alert severity="error">{errorMsg}</Alert>
             )}
 
             <form className="p-3" onSubmit={handleSubmit}>
