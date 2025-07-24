@@ -73,25 +73,37 @@ return [
     //  ]
     //
     'schemas' => [
+        // Public schema for unauthenticated operations (e.g., login)
         'default' => [
-            'query' => [
-                // ExampleQuery::class,
-            ],
+            'query' => [],
             'mutation' => [
+                'login' => \App\GraphQL\Mutations\LoginMutation::class,
                 'connectPaypal' => \App\GraphQL\Mutations\ConnectPaypalMutation::class,
             ],
-            // The types only available in this schema
             'types' => [
                 'ConnectPaypalResponse' => \App\GraphQL\Types\ConnectPaypalResponseType::class,
+                'User' => \App\GraphQL\Types\UserType::class,
+                'LoginResponse' => \App\GraphQL\Types\LoginResponseType::class,
             ],
-
-            // Laravel HTTP middleware
-            'middleware' => null,
-
-            // Which HTTP methods to support; must be given in UPPERCASE!
             'method' => ['GET', 'POST'],
+            'execution_middleware' => null,
+        ],
 
-            // An array of middlewares, overrides the global ones
+        // Protected schema for authenticated users
+        'auth' => [
+            'query' => [
+                'me' => App\GraphQL\Queries\MeQuery::class,
+            ],
+            'mutation' => [
+                // Any future authenticated mutations
+            ],
+            'types' => [
+                'User' => \App\GraphQL\Types\UserType::class,
+            ],
+            'middleware' => [
+                'auth:sanctum',
+            ],
+            'method' => ['GET', 'POST'],
             'execution_middleware' => null,
         ],
     ],
