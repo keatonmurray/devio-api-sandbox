@@ -4,6 +4,7 @@
   --bs-body-background-none: #fff;
   --bs-button-primary: #6644ff;
   --bs-button-secondary: #4e5ba6;
+  --bs-button-tertiary: #fff;
   --bs-highlight-color: #4e5ba6;
 }
 
@@ -14,18 +15,48 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Typography */
 .text-highlight {
   color: var(--bs-highlight-color) !important;
 }
 
+.text-secondary {
+  font-size: 21px !important;
+  color: #646464 !important;
+}
+
+.code-editor-text {
+  color: #bd5693;
+}
+
+.section-heading-title {
+  letter-spacing: 1.3;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+}
+
+.bg-dark input::placeholder,
+.bg-dark textarea::placeholder {
+  color: #ccc !important; 
+  opacity: 1;
+}
+
+/* Buttons */
 .btn-primary {
-    background-color: var(--bs-button-primary) !important;
-    border: 0 !important;
+  background-color: var(--bs-button-primary) !important;
+  border: 0 !important;
+  border-radius: 50px;
 }
 
 .btn-secondary {
-    background-color: var(--bs-button-secondary) !important;
-    border: 0 !important;
+  background-color: var(--bs-button-secondary) !important;
+  border: 0 !important;
+  border-radius: 50px;
+}
+
+.btn-tertiary {
+  background-color: var(--bs-button-tertiary) !important;
+  border: 1px #c4c4c4 solid !important;
+  border-radius: 50px;
 }
 
 .sidebar-scroll {
@@ -37,12 +68,13 @@ html, body {
   flex-shrink: 0;
 }
 
+/* Body Background Colors */
 .body-background-color {
-    background-color: var(--bs-body-background-color);
+  background-color: var(--bs-body-background-color);
 }
 
 .body-background-none {
-    background-color: var(--bs-body-background-none);
+  background-color: var(--bs-body-background-none);
 }
 
 input:focus {
@@ -51,12 +83,7 @@ input:focus {
   border-color: rgb(231, 231, 231) !important;
 }
 
-.bg-dark input::placeholder,
-.bg-dark textarea::placeholder {
-  color: #ccc !important; /* Light gray placeholder text */
-  opacity: 1; /* Ensure it's not semi-transparent */
-}
-
+/* Card Background Colors */
 .bg-card-light {
   background-color: rgb(247, 247, 247) !important;
 }
@@ -102,12 +129,18 @@ input:focus {
   border: 0 !important;
 }
 
+/* Navbar */
+
 .navbar-toggler {
   border: 0 !important;
 }
 
 .navbar-toggler:focus {
   box-shadow: unset !important;
+}
+
+.nav-item .nav-link {
+  font-size: 20px !important;
 }
 
 .sidebar-scroll {
@@ -177,10 +210,34 @@ body.dark-mode .offcanvas-collapse {
   }
 }
 
-.section-heading-title {
-  letter-spacing: 1.3;
+@media (max-width: 768px) {
+  .main-homepage .code-editor {
+    width: 100% !important
+  }
+}
+
+@media (max-width: 1025px) {
+  .main-nav .nav {
+    display: none;
+  }
+
+  .main-nav .nav-cta-buttons {
+    display: none !important;
+  }
 }
 
 .auth {
   overflow-x: hidden;
 }
+
+/* Main Homepage Styles */
+
+.main-homepage {
+  background-color: #f7f6ff;
+  height: 100vh;
+}
+
+ .main-homepage .code-editor {
+  width: 50%;
+ }
+
