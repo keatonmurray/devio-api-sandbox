@@ -6,7 +6,7 @@ import { RiStore2Fill } from "react-icons/ri";
 import { useState } from "react";
 import { FiCodesandbox } from "react-icons/fi";
 import Link from "next/link";
-import Searchbar from "../partials/Searchbar";
+import Searchbar from "@/partials/dashboard/Searchbar";
 
 export default function SidebarItems({isDark, theme}) {
 

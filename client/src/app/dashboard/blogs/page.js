@@ -1,5 +1,5 @@
 "use client"
-import SectionHeader from "@/partials/SectionHeader"
+import SectionHeader from "@/partials/dashboard/SectionHeader"
 import { MdDragIndicator } from "react-icons/md";
 
 export default function Blogs() {
