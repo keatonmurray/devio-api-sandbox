@@ -35,7 +35,7 @@ export default function MainNav () {
                 <div className="d-flex gap-2 nav-cta-buttons">
                     <button className="btn btn-tertiary fw-semibold">Schedule a demo</button>
                     <button className="btn btn-primary fw-semibold">
-                        Try for free
+                        Become a partner
                     </button>
                 </div>
 

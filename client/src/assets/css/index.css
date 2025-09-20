@@ -6,6 +6,8 @@
   --bs-button-secondary: #4e5ba6;
   --bs-button-tertiary: #fff;
   --bs-highlight-color: #4e5ba6;
+  --bs-text-color-primary: #4e5ba6;
+  --bs-text-color-secondary: #646464;
 }
 
 html, body {
@@ -20,13 +22,22 @@ html, body {
   color: var(--bs-highlight-color) !important;
 }
 
+.text-primary {
+  color: var(--bs-text-color-primary) !important;
+}
+
 .text-secondary {
   font-size: 21px !important;
-  color: #646464 !important;
+  color: var(--bs-text-color-secondary);
+}
+
+.text-small {
+  font-size: 16px !important;
 }
 
 .code-editor-text {
   color: #bd5693;
+  font-size: unset !important;
 }
 
 .section-heading-title {
@@ -241,3 +252,9 @@ body.dark-mode .offcanvas-collapse {
   width: 50%;
  }
 
+/* Authentication Page (Login/Register) */
+
+.devio-auth-page .auth-section-left {
+  background-color: #f9fafb;
+  padding: 50px 100px !important;
+}

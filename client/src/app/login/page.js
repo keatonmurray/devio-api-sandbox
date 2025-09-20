@@ -1,0 +1,132 @@
+import { FaGithub, FaGoogle } from "react-icons/fa"
+import { Check } from "lucide-react"
+
+export default function LoginPage() {
+    return (
+        <div className="devio-auth-page row w-100">
+           <div className="auth-section-left col-12 col-md-6 d-flex flex-column justify-content-center vh-auto">
+                {/* Logo */}
+                <div className="mb-4 text-start">
+                    <img src="./images/logo.png" height="65"/>
+                </div>
+
+                {/* Heading */}
+                <div className="mb-4 text-start">
+                    <h1 className="display-6 fw-bold">Every visitor is <span className="text-highlight">unique</span>.<br />Shouldn't your <span className="text-highlight">website</span> be too?</h1>
+                    <p className="text-secondary mt-3">
+                        Discover Devio, the headless CMS with Adaptive Content® that lets you easily create personalized experiences—boosting engagement and driving conversions.
+                    </p>
+                </div>
+
+                {/* Features list */}
+                <ul className="list-unstyled mb-4">
+                    <li className="mb-3 d-flex align-items-start">
+                        <span className="text-primary me-2"><Check /></span>
+                        <div>
+                            <strong style={{fontSize:"22px"}}>The powerful foundation for your digital experiences</strong>
+                            <p className="mb-0 text-secondary text-small">
+                                With Devio's Adaptive Content®, create personalized journeys that boost engagement and maximize your conversion rates.
+                            </p>
+                        </div>
+                    </li>
+                    <li className="mb-3 d-flex align-items-start">
+                        <span className="text-primary me-2"><Check /></span>
+                        <div>
+                            <strong style={{fontSize:"22px"}}>Deliver unique experiences for every visitor with ease</strong>
+                            <p className="mb-0 text-secondary text-small">
+                                With Devio's Adaptive Content®, create personalized journeys that boost engagement and maximize your conversion rates.
+                            </p>
+                        </div>
+                    </li>
+                    <li className="mb-3 d-flex align-items-start">
+                    <span className="text-primary me-2"><Check /></span>
+                        <div>
+                            <strong style={{fontSize:"22px"}}>Boost conversions with A/B testing</strong>
+                            <p className="mb-0 text-secondary text-small">
+                                Build high-performance websites using Prepr's built-in A/B split testing.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+                {/* Footer / Clients */}
+                <p className="fw-bold mb-3 text-center">Proudly serving industry leaders</p>
+                <div className="d-flex gap-2 justify-content-center">
+                    <img src="./images/talpa.svg" alt="Talpa Network" height="70" />
+                    <img src="./images/esso.svg" alt="Esso" height="70" />
+                    <img src="./images/iamamsterdam.svg" alt="I amsterdam" height="70" />
+                    <img src="./images/red-cross.svg" alt="Red Cross" height="70" />
+                </div>
+            </div>
+
+            <div className="auth-section-right flex-column col-12 col-md-6 vh-100 d-flex align-items-center justify-content-center">
+                <h1 className="display-4 fw-bold mb-4">Welcome to <span className="text-highlight">Devio CMS</span></h1>
+
+                <form className="w-100 px-3" style={{ maxWidth: '600px' }}>
+                    
+                    <div className="row d-flex">
+                        <div className="col-12 col-md-6 text-center">
+                            <button className="btn-tertiary px-5 py-3 w-100">
+                                <FaGoogle color={'#c4c4c4'} size={'30'} />
+                            </button>
+                        </div>
+                        <div className="col-12 col-md-6 text-center">
+                            <button className="btn-tertiary px-5 py-3 w-100">
+                                <FaGithub color={'#c4c4c4'} size={'30'}/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <br/><br />
+
+                    <div className="mb-3">
+                        <input
+                            type="email"
+                            className="form-control py-3"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <input
+                            type="password"
+                            className="form-control py-3"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        />
+                    </div>
+
+                    <div className="mb-3 form-check">
+                        <input type="checkbox" className="form-check-input" id="rememberMe" />
+                        <label className="form-check-label" htmlFor="rememberMe">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <p className="text-secondary text-small">By logging in to this portal, you agree to Devio CMS' <span className="fw-bold">Terms and Conditions</span> and <span className="fw-bold">Privacy Policy</span> to use the service.</p>
+
+                    <div className="d-flex flex-md-row flex-column gap-2">
+                        <button type="submit" className="btn btn-primary w-100 mt-4 py-3 fw-semibold">
+                            Login
+                        </button>
+                         <button type="button" className="btn btn-tertiary w-100 mt-4 py-3 fw-semibold">
+                            Create an account
+                        </button>
+                    </div>
+
+                    <div className="mt-4">
+                        <div className="d-flex text-secondary text-small fw-bold">
+                            Did you forget your password?
+                            <a href="#" className="ms-1 text-decoration-none">
+                                Reset password
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
+}

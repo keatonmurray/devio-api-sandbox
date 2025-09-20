@@ -5,6 +5,7 @@
 
 "use client";
 
+import Link from 'next/link';
 import { Copy } from 'lucide-react';
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
 
         {/* Code Editor */}
         <div className="container my-4 d-flex justify-content-center">
-          <div className="position-relative code-editor bg-dark text-light rounded py-2 px-3 d-flex align-items-center justify-content-between">
+          <div className="position-relative code-editor bg-dark text-light rounded p-3 d-flex align-items-center justify-content-between">
             <code className="code-editor-text">
               npm install devio-cms
             </code>
@@ -39,8 +40,8 @@ export default function Home() {
 
         {/* CTA Buttons */}
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-center gap-2 mt-5">
-          <button className="btn btn-primary fw-semibold btn-lg">Get started now</button>
-          <button className="btn btn-tertiary fw-semibold btn-lg">API Documentation</button>
+          <Link href="/login" className="btn btn-primary fw-semibold btn-lg">Try for free</Link>
+          <button className="btn btn-tertiary fw-semibold btn-lg">API documentation</button>
         </div>
       </div>
     </div>
