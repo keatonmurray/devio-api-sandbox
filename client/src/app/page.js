@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* Third Section */}
       <div className="devio-main-homepage devio-page-section-tertiary py-5 px-3 d-flex justify-content-center align-items-center flex-column">
-        <div className="w-75">
+        <div className="w-75 section-tertiary-wrapper">
           <h1 className="display-5 fw-bolder text-center section-heading-title">
             Spin up your <span className="text-highlight">backend</span>, stay in <span className="text-highlight">control</span>
           </h1>
@@ -104,6 +104,32 @@ export default function Home() {
             Every project needs APIs, auth, and admin panels.
             Devio gives you a production-ready backend that just works.
           </p>
+
+          <br/>
+
+          <div className="mt-5">
+            <div className="devio-features-wrapper row">
+              {[1, 2, 3, 4, 5, 6].map((num) => (
+                <div key={num} className="col-12 col-md-4 col-lg-4 mb-4 d-flex">
+                  <div className="card shadow-lg border-0 position-relative flex-fill" style={{ overflow: 'hidden' }}>
+                    <div className="card-body d-flex flex-column justify-content-between h-100">
+                      <h4 className="fw-bold mb-3 text-md-start text-center">Lorem ipsum dolor</h4>
+                      <div className="text-center mt-auto">
+                        <Image 
+                          src={`/images/feat-img${num}.png`} 
+                          height={180} 
+                          width={300} 
+                          className="img-fluid" 
+                          alt="Feature illustration"
+                          style={{ objectFit: 'contain', maxHeight: '180px', width: '100%' }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

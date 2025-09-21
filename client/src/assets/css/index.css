@@ -231,6 +231,10 @@ body.dark-mode .offcanvas-collapse {
     width: 100% !important
   }
 
+  .devio-main-homepage.devio-page-section-tertiary .section-tertiary-wrapper {
+    width: unset !important;
+  }
+
   .main-nav .logo-wrapper img {
     height: 50px !important;
     width: 50px !important;
