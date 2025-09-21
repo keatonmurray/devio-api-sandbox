@@ -21,7 +21,7 @@ export default function LoginPage() {
 
                 {/* Heading */}
                 <div className="mb-4 text-start">
-                    <h1 className="display-6 fw-bold">Every visitor is <span className="text-highlight">unique</span>.<br />Shouldn't your <span className="text-highlight">website</span> be too?</h1>
+                    <h1 className="display-6 fw-bold">Every visitor is <span className="text-highlight">unique</span>.<br />Shouldn’t your <span className="text-highlight">website</span> be too?</h1>
                     <p className="text-secondary mt-3">
                         Discover Devio, the headless CMS with Adaptive Content® that lets you easily create personalized experiences—boosting engagement and driving conversions.
                     </p>
@@ -34,7 +34,7 @@ export default function LoginPage() {
                         <div>
                             <strong style={{fontSize:"22px"}}>The powerful foundation for your digital experiences</strong>
                             <p className="mb-0 text-secondary text-small">
-                                With Devio's Adaptive Content®, create personalized journeys that boost engagement and maximize your conversion rates.
+                                With Devio’s Adaptive Content®, create personalized journeys that boost engagement and maximize your conversion rates.
                             </p>
                         </div>
                     </li>
@@ -43,16 +43,16 @@ export default function LoginPage() {
                         <div>
                             <strong style={{fontSize:"22px"}}>Deliver unique experiences for every visitor with ease</strong>
                             <p className="mb-0 text-secondary text-small">
-                                With Devio's Adaptive Content®, create personalized journeys that boost engagement and maximize your conversion rates.
+                                With Devio’s Adaptive Content®, create personalized journeys that boost engagement and maximize your conversion rates.
                             </p>
                         </div>
                     </li>
                     <li className="mb-3 d-flex align-items-start">
-                    <span className="text-primary me-2"><Check /></span>
+                        <span className="text-primary me-2"><Check /></span>
                         <div>
                             <strong style={{fontSize:"22px"}}>Boost conversions with A/B testing</strong>
                             <p className="mb-0 text-secondary text-small">
-                                Build high-performance websites using Prepr's built-in A/B split testing.
+                                Build high-performance websites using Devio’s built-in A/B split testing.
                             </p>
                         </div>
                     </li>
@@ -60,7 +60,7 @@ export default function LoginPage() {
 
                 {/* Footer / Clients */}
                 <p className="fw-bold mb-3 text-center">Proudly serving industry leaders</p>
-               <div className="d-flex gap-2 justify-content-center">
+                <div className="d-flex gap-2 justify-content-center">
                     <Image src="/images/talpa.svg" alt="Talpa Network" width={120} height={70} />
                     <Image src="/images/esso.svg" alt="Esso" width={120} height={70} />
                     <Image src="/images/iamamsterdam.svg" alt="I amsterdam" width={120} height={70} />
@@ -107,13 +107,13 @@ export default function LoginPage() {
                         />
                     </div>
 
-                    <p className="text-secondary text-small">By logging in to this portal, you agree to Devio CMS' <span className="fw-bold">Terms and Conditions</span> and <span className="fw-bold">Privacy Policy</span> to use the service.</p>
+                    <p className="text-secondary text-small">By logging in to this portal, you agree to Devio CMS’ <span className="fw-bold">Terms and Conditions</span> and <span className="fw-bold">Privacy Policy</span> to use the service.</p>
 
                     <div className="d-flex flex-md-row flex-column gap-2">
                         <button type="submit" className="btn btn-primary w-100 mt-md-4 mt-1 py-3 fw-semibold">
                             Login
                         </button>
-                         <button type="button" className="btn btn-tertiary w-100 mt-md-4 mt-1 py-3 fw-semibold">
+                        <button type="button" className="btn btn-tertiary w-100 mt-md-4 mt-1 py-3 fw-semibold">
                             Create an account
                         </button>
                     </div>
@@ -131,3 +131,4 @@ export default function LoginPage() {
         </div>
     )
 }
+    
