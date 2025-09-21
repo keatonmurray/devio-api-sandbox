@@ -17,7 +17,7 @@ export default function DashboardLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${poppins.className} ${isDark ? 'bg-dark text-white' : ''}`}>
+      <body className={poppins.className}>
         <Topnav theme={theme} toggleTheme={toggleTheme} />
         <div className="d-flex">
           <Sidebar theme={theme} />

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { FaBars } from "react-icons/fa";
+import Image from "next/image";
 
 export default function MainNav () {
     return(
@@ -9,7 +10,12 @@ export default function MainNav () {
                 {/* Logo */}
                 <div className="logo-wrapper">
                     <Link href="/">
-                        <img src="./images/logo.png" alt="Logo" height="65" />
+                        <Image 
+                            src="/images/logo.png" 
+                            alt="Logo" 
+                            height={65} 
+                            width={65}
+                        />
                     </Link>
                 </div>
                 

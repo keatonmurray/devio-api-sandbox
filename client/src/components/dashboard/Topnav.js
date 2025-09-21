@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, Container, Form } from "react-bootstrap";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Topnav({theme, toggleTheme}) {
     const isDark = theme === "dark";
@@ -34,11 +35,11 @@ export default function Topnav({theme, toggleTheme}) {
                 <Container fluid>
                 <Link href="/">
                     <Navbar.Brand className={`fw-bold ${isDark ? "text-white" : "text-primary"}`}>
-                    <img
+                    <Image
                         src={isDark ? "/images/logo-inverted.png" : "/images/logo.png"}
                         alt="Devio Logo"
-                        width="50"
-                        height="50"
+                        width={50}
+                        height={50}
                         className="d-inline-block align-top me-2"
                     />
                     </Navbar.Brand>

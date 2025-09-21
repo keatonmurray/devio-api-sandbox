@@ -1,6 +1,7 @@
 import { FaGithub, FaGoogle } from "react-icons/fa"
 import { Check } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function LoginPage() {
     return (
@@ -9,7 +10,12 @@ export default function LoginPage() {
                 {/* Logo */}
                 <div className="mb-4 text-start">
                     <Link href="/">
-                        <img src="./images/logo.png" height="65"/>
+                        <Image 
+                            src="/images/logo.png" 
+                            alt="Logo" 
+                            height={65} 
+                            width={65}
+                        />
                     </Link>
                 </div>
 
@@ -54,11 +60,11 @@ export default function LoginPage() {
 
                 {/* Footer / Clients */}
                 <p className="fw-bold mb-3 text-center">Proudly serving industry leaders</p>
-                <div className="d-flex gap-2 justify-content-center">
-                    <img src="./images/talpa.svg" alt="Talpa Network" height="70" />
-                    <img src="./images/esso.svg" alt="Esso" height="70" />
-                    <img src="./images/iamamsterdam.svg" alt="I amsterdam" height="70" />
-                    <img src="./images/red-cross.svg" alt="Red Cross" height="70" />
+               <div className="d-flex gap-2 justify-content-center">
+                    <Image src="/images/talpa.svg" alt="Talpa Network" width={120} height={70} />
+                    <Image src="/images/esso.svg" alt="Esso" width={120} height={70} />
+                    <Image src="/images/iamamsterdam.svg" alt="I amsterdam" width={120} height={70} />
+                    <Image src="/images/red-cross.svg" alt="Red Cross" width={120} height={70} />
                 </div>
             </div>
 
