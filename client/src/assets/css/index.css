@@ -296,6 +296,12 @@ body.dark-mode .offcanvas-collapse {
   min-height: 80px;
 }
 
+.devio-main-homepage.devio-page-section-tertiary .devio-features-wrapper img {
+  object-fit: contain;
+  max-height: 180px;
+  width: 100%;
+}
+
 /* Authentication Page (Login/Register) */
 
 .devio-auth-page .auth-section-left {
