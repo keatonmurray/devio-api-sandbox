@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function LoginPage() {
     return (
         <div className="devio-auth-page row">
-            <div className="auth-section-left col-12 col-lg-6 d-none d-lg-flex flex-column justify-content-center vh-100">
+            <div className="auth-section-left col-12 col-lg-6 d-none d-lg-flex flex-column justify-content-center">
                 {/* Logo */}
                 <div className="mb-4 text-start">
                     <Link href="/">

@@ -1,6 +1,7 @@
 :root {
   --bs-body-font-family: 'Inter', sans-serif;
-  --bs-body-background-color: #f7f6ff;
+  --bs-body-background-primary: #f7f6ff;
+  --bs-body-background-secondary: #f1f5f9;
   --bs-body-background-none: #fff;
   --bs-button-primary: #6644ff;
   --bs-button-secondary: #4e5ba6;
@@ -261,14 +262,26 @@ body.dark-mode .offcanvas-collapse {
 
 /* Main Homepage Styles */
 
-.devio-main-homepage {
-  background-color: #f7f6ff;
-  height: 100vh;
+.devio-main-homepage.devio-page-section-primary {
+  background-color: var(--bs-body-background-primary);
 }
 
- .devio-main-homepage .code-editor {
+/* .devio-main-homepage.devio-page-section-secondary {
+  background-color: var(--bs-body-background-secondary) !important;
+} */
+
+.devio-main-homepage .code-editor {
   width: 50%;
- }
+}
+
+.devio-main-homepage.devio-page-section-secondary .video-wrapper {
+  max-width: 980px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.devio-main-homepage.devio-page-section-secondary .devio-sponsors-wrapper .row {
+  min-height: 80px;
+}
 
 /* Authentication Page (Login/Register) */
 
