@@ -234,6 +234,10 @@ body.dark-mode .offcanvas-collapse {
   .devio-auth-page .auth-section-right {
     width: 100%;
   }
+
+  .devio-main-homepage .devio-homepage-cta-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -266,9 +270,9 @@ body.dark-mode .offcanvas-collapse {
   background-color: var(--bs-body-background-primary);
 }
 
-/* .devio-main-homepage.devio-page-section-secondary {
+.devio-main-homepage.devio-page-section-tertiary {
   background-color: var(--bs-body-background-secondary) !important;
-} */
+}
 
 .devio-main-homepage .code-editor {
   width: 50%;

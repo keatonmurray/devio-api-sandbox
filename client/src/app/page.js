@@ -54,8 +54,12 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="d-flex flex-column flex-md-row align-items-center justify-content-center gap-2 mt-5">
-            <Link href="/login" className="btn btn-primary fw-semibold btn-lg">Try for free</Link>
-            <button className="btn btn-tertiary fw-semibold btn-lg">API documentation</button>
+            <Link href="/login" className="btn btn-primary fw-semibold btn-lg devio-homepage-cta-btn">
+              Try for free
+            </Link>
+            <button className="btn btn-tertiary fw-semibold btn-lg devio-homepage-cta-btn">
+              API documentation
+            </button>
           </div>
         </div>
       </div>
@@ -88,7 +92,20 @@ export default function Home() {
             ))}
           </div>
         </div>
-    </div>
+      </div>
+
+      {/* Third Section */}
+      <div className="devio-main-homepage devio-page-section-tertiary py-5 px-3 d-flex justify-content-center align-items-center flex-column">
+        <div className="w-75">
+          <h1 className="display-5 fw-bolder text-center section-heading-title">
+            Spin up your <span className="text-highlight">backend</span>, stay in <span className="text-highlight">control</span>
+          </h1>
+          <p className="text-secondary mt-3 w-md-75 w-100 text-center mx-auto">
+            Every project needs APIs, auth, and admin panels.
+            Devio gives you a production-ready backend that just works.
+          </p>
+        </div>
+      </div>
     </>
   );
 }
