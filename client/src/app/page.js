@@ -134,44 +134,44 @@ export default function Home() {
 
       {/* Fourth Section */}
       <div className="devio-main-homepage devio-page-section-qauternary py-5 px-3 d-flex justify-content-center align-items-start flex-column">
-        <div className="container">
+        <div className="">
           <div className="d-flex align-items-center justify-content-center gap-5 mb-4">
               <div className="row">
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center">
-                  <Image className="img-fluid" src="/images/highlight-img1.png" alt={"Highlight Image"} height={1000} width={1000} />
+                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
+                  <Image className="img-fluid" src="/images/highlight-img2.png" alt={"Highlight Image"} height={750} width={750} />
                 </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center">
+                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
                   <div>
-                    <h1 className="display-6 fw-bolder section-heading-title">
-                      Flexible, extensible, and powered by <span className="text-highlight">community plugins</span>
-                    </h1>
-                    <p className="text-secondary">
-                      From custom workflows to powerful plugins, Devio scales with your vision. We aim to be a developer community that empowers you to create, share, and profit.
-                    </p>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center">
-                  <Image className="img-fluid" src="/images/highlight-img2.png" alt={"Highlight Image"} height={1000} width={1000} />
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center">
-                  <div>
-                    <h1 className="display-6 fw-bolder section-heading-title">
+                    <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
                       Effortless <span className="text-highlight">content management</span>
                     </h1>
-                    <p className="text-secondary">
+                    <p className="text-secondary text-md-start text-center">
                       Marketing teams can manage, schedule, and optimize content effortlessly in Devio’s intuitive interface.
                     </p>
                   </div>
                 </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center">
-                  <Image className="img-fluid" src="/images/highlight-img3.png" alt={"Highlight Image"} height={1000} width={1000} />
+                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
+                  <Image className="img-fluid" src="/images/highlight-img1.png" alt={"Highlight Image"} height={750} width={750} />
                 </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center">
+                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
                   <div>
-                    <h1 className="display-6 fw-bolder section-heading-title">
+                    <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
+                      Flexible, extensible, and powered by <span className="text-highlight">community plugins</span>
+                    </h1>
+                    <p className="text-secondary text-md-start text-center">
+                      From custom workflows to powerful plugins, Devio scales with your vision. We aim to be a developer community that empowers you to create, share, and profit.
+                    </p>
+                  </div>
+                </div>
+                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
+                  <Image className="img-fluid" src="/images/highlight-img3.png" alt={"Highlight Image"} height={750} width={750} />
+                </div>
+                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
+                  <div>
+                    <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
                       <span className="text-highlight">One-Click</span> Deployment, Zero Hassle
                     </h1>
-                    <p className="text-secondary">
+                    <p className="text-secondary text-md-start text-center">
                       Push your projects live effortlessly—Devio integrates seamlessly with Vercel for one-click deployment.
                     </p>
                   </div>
