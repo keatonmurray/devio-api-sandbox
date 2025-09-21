@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, Container, Form } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
+import SidebarItems from "@/partials/dashboard/SidebarItems";
 
 export default function Topnav({theme, toggleTheme}) {
     const isDark = theme === "dark";
