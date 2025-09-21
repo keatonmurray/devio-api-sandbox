@@ -3,7 +3,7 @@ import { useState } from "react";
 import { List, X } from "lucide-react";
 import SidebarItems from "@/partials/dashboard/SidebarItems";
 
-export default function SidebarItems({theme}) {
+export default function Sidebar({theme}) {
     const [isOpen, setIsOpen] = useState(false);
 
     const isDark = theme === "dark";
