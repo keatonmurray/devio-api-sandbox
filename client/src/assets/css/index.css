@@ -226,7 +226,7 @@ body.dark-mode .offcanvas-collapse {
 }
 
 @media (max-width: 768px) {
-  .main-homepage .code-editor {
+  .devio-main-homepage .code-editor {
     width: 100% !important
   }
 
@@ -261,12 +261,12 @@ body.dark-mode .offcanvas-collapse {
 
 /* Main Homepage Styles */
 
-.main-homepage {
+.devio-main-homepage {
   background-color: #f7f6ff;
   height: 100vh;
 }
 
- .main-homepage .code-editor {
+ .devio-main-homepage .code-editor {
   width: 50%;
  }
 
