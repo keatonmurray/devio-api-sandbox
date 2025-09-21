@@ -21,6 +21,28 @@ export default function Home() {
     { src: "/images/company6.svg", alt: "Company 6" },
   ];
 
+  // Highlight titles, subitles, and background images
+  const highlights = [
+    {
+      title: "Effortless content management",
+      highlight: "content management",
+      text: "Marketing teams can manage, schedule, and optimize content effortlessly in Devio’s intuitive interface.",
+      img: "/images/highlight-img2.png",
+    },
+    {
+      title: "Flexible, extensible, and powered by community plugins",
+      highlight: "community plugins",
+      text: "From custom workflows to powerful plugins, Devio scales with your vision. We aim to be a developer community that empowers you to create, share, and profit.",
+      img: "/images/highlight-img1.png",
+    },
+    {
+      title: "One-Click Deployment, Zero Hassle",
+      highlight: "One-Click",
+      text: "Push your projects live effortlessly—Devio integrates seamlessly with Vercel for one-click deployment.",
+      img: "/images/highlight-img3.png",
+    },
+  ];
+
   return (
     <>
       {/* First Section */}
@@ -134,49 +156,44 @@ export default function Home() {
 
       {/* Fourth Section */}
       <div className="devio-main-homepage devio-page-section-qauternary py-5 px-3 d-flex justify-content-center align-items-start flex-column">
-        <div className="">
-          <div className="d-flex align-items-center justify-content-center gap-5 mb-4">
-              <div className="row">
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
-                  <Image className="img-fluid" src="/images/highlight-img2.png" alt={"Highlight Image"} height={750} width={750} />
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
-                  <div>
-                    <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
-                      Effortless <span className="text-highlight">content management</span>
-                    </h1>
-                    <p className="text-secondary text-md-start text-center">
-                      Marketing teams can manage, schedule, and optimize content effortlessly in Devio’s intuitive interface.
-                    </p>
+        <div className="d-flex align-items-center justify-content-center gap-5 mb-4">
+          <div className="row">
+            {highlights.map((item, index) => {
+              return (
+                <>
+                  {/* Image */}
+                  <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0" key={`img-${index}`}>
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      height={750}
+                      width={750}
+                      className="img-fluid"
+                      priority
+                    />
                   </div>
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
-                  <Image className="img-fluid" src="/images/highlight-img1.png" alt={"Highlight Image"} height={750} width={750} />
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
-                  <div>
-                    <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
-                      Flexible, extensible, and powered by <span className="text-highlight">community plugins</span>
-                    </h1>
-                    <p className="text-secondary text-md-start text-center">
-                      From custom workflows to powerful plugins, Devio scales with your vision. We aim to be a developer community that empowers you to create, share, and profit.
-                    </p>
+
+                  {/* Text */}
+                  <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0" key={`text-${index}`}>
+                    <div>
+                      <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
+                        {item.title.split(item.highlight).map((part, i, arr) =>
+                          i < arr.length - 1 ? (
+                            <>
+                              {part}
+                              <span className="text-highlight">{item.highlight}</span>
+                            </>
+                          ) : (
+                            part
+                          )
+                        )}
+                      </h1>
+                      <p className="text-secondary text-md-start text-center">{item.text}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
-                  <Image className="img-fluid" src="/images/highlight-img3.png" alt={"Highlight Image"} height={750} width={750} />
-                </div>
-                <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
-                  <div>
-                    <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
-                      <span className="text-highlight">One-Click</span> Deployment, Zero Hassle
-                    </h1>
-                    <p className="text-secondary text-md-start text-center">
-                      Push your projects live effortlessly—Devio integrates seamlessly with Vercel for one-click deployment.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </div>
