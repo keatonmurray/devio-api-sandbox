@@ -29,7 +29,7 @@ export default function Sidebar({theme}) {
                     overflowY: "auto"
                 }}
             >
-                <SidebarItems isDark={isDark}/>
+                <SidebarItems/>
             </div>
         </div>
     )
