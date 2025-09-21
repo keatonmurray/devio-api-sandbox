@@ -17,6 +17,10 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* Typography */
 .text-highlight {
   color: var(--bs-highlight-color) !important;
@@ -225,6 +229,16 @@ body.dark-mode .offcanvas-collapse {
   .main-homepage .code-editor {
     width: 100% !important
   }
+
+  .devio-auth-page .auth-section-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .devio-auth-page .auth-section-right {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1025px) {
@@ -235,6 +249,10 @@ body.dark-mode .offcanvas-collapse {
   .main-nav .nav-cta-buttons {
     display: none !important;
   }
+}
+
+.code-editor-text {
+  white-space: nowrap;
 }
 
 .auth {

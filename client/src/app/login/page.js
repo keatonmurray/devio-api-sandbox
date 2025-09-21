@@ -1,13 +1,16 @@
 import { FaGithub, FaGoogle } from "react-icons/fa"
 import { Check } from "lucide-react"
+import Link from "next/link"
 
 export default function LoginPage() {
     return (
-        <div className="devio-auth-page row w-100">
-           <div className="auth-section-left col-12 col-md-6 d-flex flex-column justify-content-center vh-auto">
+        <div className="devio-auth-page row">
+            <div className="auth-section-left col-12 col-lg-6 d-none d-lg-flex flex-column justify-content-center vh-100">
                 {/* Logo */}
                 <div className="mb-4 text-start">
-                    <img src="./images/logo.png" height="65"/>
+                    <Link href="/">
+                        <img src="./images/logo.png" height="65"/>
+                    </Link>
                 </div>
 
                 {/* Heading */}
@@ -59,19 +62,18 @@ export default function LoginPage() {
                 </div>
             </div>
 
-            <div className="auth-section-right flex-column col-12 col-md-6 vh-100 d-flex align-items-center justify-content-center">
+            <div className="auth-section-right text-center flex-column col-12 col-md-6 vh-100 d-flex align-items-center justify-content-center py-md-4 py-5 px-md-3 px-4">                
                 <h1 className="display-4 fw-bold mb-4">Welcome to <span className="text-highlight">Devio CMS</span></h1>
-
                 <form className="w-100 px-3" style={{ maxWidth: '600px' }}>
                     
                     <div className="row d-flex">
                         <div className="col-12 col-md-6 text-center">
-                            <button className="btn-tertiary px-5 py-3 w-100">
+                            <button className="btn-tertiary px-5 py-3 w-100 mb-2">
                                 <FaGoogle color={'#c4c4c4'} size={'30'} />
                             </button>
                         </div>
                         <div className="col-12 col-md-6 text-center">
-                            <button className="btn-tertiary px-5 py-3 w-100">
+                            <button className="btn-tertiary px-5 py-3 w-100 mb-2">
                                 <FaGithub color={'#c4c4c4'} size={'30'}/>
                             </button>
                         </div>
@@ -99,26 +101,19 @@ export default function LoginPage() {
                         />
                     </div>
 
-                    <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="rememberMe" />
-                        <label className="form-check-label" htmlFor="rememberMe">
-                            Remember me
-                        </label>
-                    </div>
-
                     <p className="text-secondary text-small">By logging in to this portal, you agree to Devio CMS' <span className="fw-bold">Terms and Conditions</span> and <span className="fw-bold">Privacy Policy</span> to use the service.</p>
 
                     <div className="d-flex flex-md-row flex-column gap-2">
-                        <button type="submit" className="btn btn-primary w-100 mt-4 py-3 fw-semibold">
+                        <button type="submit" className="btn btn-primary w-100 mt-md-4 mt-1 py-3 fw-semibold">
                             Login
                         </button>
-                         <button type="button" className="btn btn-tertiary w-100 mt-4 py-3 fw-semibold">
+                         <button type="button" className="btn btn-tertiary w-100 mt-md-4 mt-1 py-3 fw-semibold">
                             Create an account
                         </button>
                     </div>
 
                     <div className="mt-4">
-                        <div className="d-flex text-secondary text-small fw-bold">
+                        <div className="d-md-flex d-block text-secondary text-small fw-bold">
                             Did you forget your password?
                             <a href="#" className="ms-1 text-decoration-none">
                                 Reset password

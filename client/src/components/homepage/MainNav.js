@@ -1,8 +1,9 @@
 import Link from "next/link"
+import { FaBars } from "react-icons/fa";
 
 export default function MainNav () {
     return(
-        <div className="main-nav py-3 px-5">
+        <div className="main-nav py-md-3 py-2 px-md-5 px-0">
             <div className="d-flex align-items-center justify-content-between container">
                 
                 {/* Logo */}
@@ -37,6 +38,10 @@ export default function MainNav () {
                     <button className="btn btn-primary fw-semibold">
                         Become a partner
                     </button>
+                </div>
+
+                <div className="d-md-none d-block">
+                    <FaBars size={35}/>
                 </div>
 
             </div>

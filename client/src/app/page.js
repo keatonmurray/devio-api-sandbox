@@ -22,7 +22,7 @@ export default function Home() {
 
         {/* Code Editor */}
         <div className="container my-4 d-flex justify-content-center">
-          <div className="position-relative code-editor bg-dark text-light rounded p-3 d-flex align-items-center justify-content-between">
+          <div className="position-relative code-editor bg-dark text-light rounded px-md-3 px-2 py-md-3 py-2 d-flex align-items-center justify-content-between">
             <code className="code-editor-text">
               npm install devio-cms
             </code>
