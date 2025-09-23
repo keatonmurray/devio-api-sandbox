@@ -166,9 +166,9 @@ export default function Home() {
           <div className="row">
             {highlights.map((item, index) => {
               return (
-                <>
+                <div className="row" key={item.title}>
                   {/* Image */}
-                  <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0" key={`img-${index}`}>
+                  <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
                     <Image
                       src={item.img}
                       alt={item.title}
@@ -180,15 +180,15 @@ export default function Home() {
                   </div>
 
                   {/* Text */}
-                  <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0" key={`text-${index}`}>
+                  <div className="col-12 col-md-6 mb-4 d-flex align-items-center justify-content-center pb-md-5 pb-0">
                     <div>
                       <h1 className="display-6 fw-bolder section-heading-title text-md-start text-center">
                         {item.title.split(item.highlight).map((part, i, arr) =>
                           i < arr.length - 1 ? (
-                            <>
+                            <span key={i}>
                               {part}
                               <span className="text-highlight">{item.highlight}</span>
-                            </>
+                            </span>
                           ) : (
                             part
                           )
@@ -197,7 +197,7 @@ export default function Home() {
                       <p className="text-secondary text-md-start text-center">{item.text}</p>
                     </div>
                   </div>
-                </>
+                </div>
               );
             })}
           </div>
