@@ -36,6 +36,12 @@ export default function Home() {
       img: "/images/highlight-img1.png",
     },
     {
+      title: "Internal HRIS system",
+      highlight: "HRIS",
+      text: "From employee profiles to accounting and payroll, Devio centralizes your HR workflows with core HRIS functionality—and lets you extend features through plugins.",
+      img: "/images/highlight-img2.png",
+    },
+    {
       title: "One-Click Deployment, Zero Hassle",
       highlight: "One-Click",
       text: "Push your projects live effortlessly—Devio integrates seamlessly with Vercel for one-click deployment.",
@@ -197,6 +203,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Fifth Section */}
+      {/* Something that should say "Devio is frontend-agnostic" */}
     </>
   );
 }
