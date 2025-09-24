@@ -6,7 +6,7 @@ import SidebarItems from "@/partials/dashboard/SidebarItems";
 import { useTheme } from "@/context/themeContext";
 
 export default function Sidebar() {
-  const { theme } = useTheme(); // get theme from context
+  const { theme } = useTheme(); 
   const isDark = theme === "dark";
 
   const [isOpen, setIsOpen] = useState(false);
@@ -15,17 +15,6 @@ export default function Sidebar() {
 
   return (
     <div className="sidebar">
-      {/* Mobile toggle button */}
-      <div className="d-md-none p-2">
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => setIsOpen(!isOpen)}
-          style={{ fontSize: "1rem", padding: "4px 8px" }}
-        >
-          {isOpen ? <X size={20} /> : <List size={20} />}
-        </button>
-      </div>
-
       {/* Sidebar content */}
       <div
         className={`sidebar-scroll border-end ${isDark ? "border-secondary" : "border-light"} p-3 ${bgClass} ${isOpen ? "d-block" : "d-none"} d-md-block`}

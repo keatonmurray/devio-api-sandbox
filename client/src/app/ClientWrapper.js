@@ -5,7 +5,7 @@ import MainNav from "@/components/homepage/MainNav";
 
 export default function ClientWrapper({ children }) {
   const pathname = usePathname();
-  const showNavbar = pathname !== "/login" && pathname !== "/dashboard";
+  const showNavbar = !pathname.startsWith("/login") && !pathname.startsWith("/dashboard");
 
   return (
     <>

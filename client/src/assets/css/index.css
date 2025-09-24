@@ -84,6 +84,10 @@ body {
   flex-shrink: 0;
 }
 
+.devio-section-header-action-btn {
+  padding: 2px 18px;
+}
+
 /* Body Background Colors */
 .body-background-color {
   background-color: var(--bs-body-background-color);
@@ -104,8 +108,8 @@ input:focus {
   background-color: rgb(247, 247, 247) !important;
 }
 
-.bg-card-dark {
-  background-color: #2c3034 !important;
+.bg-card-dark, .bg-dark-secondary {
+  background-color: #2a2f33 !important;
 }
 
 .bg-card-light {
@@ -143,6 +147,10 @@ input:focus {
 .form-check-input:checked {
   background-color: #83a2d0;
   border: 0 !important;
+}
+
+.form-control, .form-select {
+  padding: 12px;
 }
 
 /* Navbar */

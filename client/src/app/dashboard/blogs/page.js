@@ -1,11 +1,15 @@
 "use client"
 import SectionHeader from "@/partials/dashboard/SectionHeader"
 import { MdDragIndicator } from "react-icons/md";
+import { useTheme } from "@/context/themeContext";
 import Image from "next/image";
 
 export default function Blogs() {
+    const { theme } = useTheme(); 
+    const isDark = theme === "dark";
+
     return (
-        <SectionHeader  sectionTitle="Posts" subSectionTitle="Blogs">
+        <SectionHeader sectionTitle="Posts" subSectionTitle="Blogs">
             {[
                 'Scalable Content Models',
                 'Figma to Frontend Automation',
@@ -13,9 +17,10 @@ export default function Blogs() {
                 'Lessons from Our Headless Migration',
             ].map((title, index) => (
                 <div
-                key={index}
-                className={`card border-0 shadow-sm my-1`}
+                    key={index}
+                    className={`card border-0 shadow-sm my-1 ${isDark ? "bg-card-dark text-white" : "bg-white text-dark"}`}
                 >
+                    
                 <div className="card-body d-flex align-items-center justify-content-start gap-3">
                         <MdDragIndicator size="30" cursor="pointer" className={`indicator-light flex-shrink-0`} />
                         <div className="d-flex align-items-center gap-2 flex-grow-1">

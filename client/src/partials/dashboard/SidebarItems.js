@@ -42,9 +42,9 @@ export default function SidebarItems({isDark, theme}) {
                         onClick={() => toggleMenu("website")}
                     >
                         <span className="d-flex align-items-center gap-2">
-                        <FiBox />
-                        Website
-                        </span>
+                            <FiBox />
+                                Website
+                            </span>
                         <MdKeyboardArrowDown />
                     </button>
                     <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("website") ? "show" : ""}`}>
@@ -68,7 +68,7 @@ export default function SidebarItems({isDark, theme}) {
                         </ul>
                          <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("posts") ? "show" : ""}`}>
                             <li className="nav-item">
-                            <Link href="/blogs" className={`nav-link small fw-semibold ${textClass}`}>Blogs</Link>
+                            <Link href="/dashboard/blogs" className={`nav-link small fw-semibold ${textClass}`}>Blogs</Link>
                             </li>
                         </ul>
                         </li>
