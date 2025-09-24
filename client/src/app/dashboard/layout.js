@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Topnav from "@/components/dashboard/Topnav";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Poppins } from "next/font/google";
+import { ThemeProvider } from "@/context/themeContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,19 +11,17 @@ const poppins = Poppins({
 });
 
 export default function DashboardLayout({ children }) {
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = () => setTheme(prev => (prev === "light" ? "dark" : "light"));
-  const isDark = theme === "dark";
-
   return (
-    <div className={poppins.className}>
-      <Topnav theme={theme} toggleTheme={toggleTheme} />
-      <div className="d-flex">
-        <Sidebar theme={theme} />
-        <div className="flex-grow-1 mt-4">
-          {children}
+    <ThemeProvider>
+      <div className={poppins.className}>
+        <Topnav />
+        <div className="d-flex">
+          <Sidebar />
+          <div className="flex-grow-1">
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
