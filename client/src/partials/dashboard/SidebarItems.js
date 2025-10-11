@@ -1,8 +1,5 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FiBox } from "react-icons/fi";
-import { FaAffiliatetheme } from "react-icons/fa";
-import { AiFillApi } from "react-icons/ai";
-import { RiStore2Fill } from "react-icons/ri";
 import { useState } from "react";
 import { FiCodesandbox } from "react-icons/fi";
 import Link from "next/link";
@@ -34,6 +31,9 @@ export default function SidebarItems({isDark, theme}) {
                     <Searchbar theme={theme} />
                 </div>
             </div>
+
+            <span className="text-secondary fw-semibold text-small">Schema</span>
+
             <ul className="nav flex-column">
                 {/* Website */}
                 <li className="nav-item">
@@ -43,104 +43,16 @@ export default function SidebarItems({isDark, theme}) {
                     >
                         <span className="d-flex align-items-center gap-2">
                             <FiBox />
-                                Website
-                            </span>
+                            <span>Asset</span>
+                        </span>
                         <MdKeyboardArrowDown />
                     </button>
                     <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("website") ? "show" : ""}`}>
                         <li className="nav-item">
-                            <Link href="/pages" className={`nav-link small fw-semibold ${textClass}`}>
-                                Pages
+                            <Link href="/dashboard/models" className={`nav-link small fw-semibold ${textClass}`}>
+                                Models
                             </Link>
                         </li>
-                        <li className="nav-item">
-                        <button
-                            className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
-                            onClick={() => toggleMenu("posts")}
-                        >
-                            Posts
-                            <MdKeyboardArrowDown />
-                        </button>
-                        <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("posts") ? "show" : ""}`}>
-                            <li className="nav-item">
-                            <Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Workflow</Link>
-                            </li>
-                        </ul>
-                         <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("posts") ? "show" : ""}`}>
-                            <li className="nav-item">
-                            <Link href="/dashboard/blogs" className={`nav-link small fw-semibold ${textClass}`}>Blogs</Link>
-                            </li>
-                        </ul>
-                        </li>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Navigation</Link></li>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Forms</Link></li>
-                    </ul>
-                    </li>
-
-                    {/* Themes */}
-                    <li className="nav-item">
-                    <button
-                        className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
-                        onClick={() => toggleMenu("themes")}
-                    >
-                        <span className="d-flex align-items-center gap-2">
-                        <FaAffiliatetheme />
-                        Themes
-                        </span>
-                        <MdKeyboardArrowDown />
-                    </button>
-                    <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("themes") ? "show" : ""}`}>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Visual Editor</Link></li>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Appearance</Link></li>
-                    </ul>
-                    </li>
-
-                    {/* APIs */}
-                    <li className="nav-item">
-                    <button
-                        className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
-                        onClick={() => toggleMenu("api")}
-                    >
-                        <span className="d-flex align-items-center gap-2">
-                        <AiFillApi />
-                        APIs
-                        </span>
-                        <MdKeyboardArrowDown />
-                    </button>
-                    <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("api") ? "show" : ""}`}>
-                        <li className="nav-item">
-                        <button
-                            className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
-                            onClick={() => toggleMenu("plugins")}
-                        >
-                            Plugins
-                            <MdKeyboardArrowDown />
-                        </button>
-                        <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("plugins") ? "show" : ""}`}>
-                            <li className="nav-item"><Link href="/plugin/paypal" className={`nav-link small fw-semibold ${textClass}`}>PayPal</Link></li>
-                            
-                        </ul>
-                        </li>
-                    </ul>
-                    </li>
-
-                    {/* Ecommerce */}
-                    <li className="nav-item">
-                    <button
-                        className={`nav-link d-flex justify-content-between align-items-center fw-semibold w-100 text-start btn btn-link ${textClass}`}
-                        onClick={() => toggleMenu("ecommerce")}
-                    >
-                        <span className="d-flex align-items-center gap-2">
-                        <RiStore2Fill />
-                        Online Store
-                        </span>
-                        <MdKeyboardArrowDown />
-                    </button>
-                    <ul className={`nav flex-column ms-3 collapse ${isMenuOpen("ecommerce") ? "show" : ""}`}>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Products</Link></li>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Analytics</Link></li>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Payments</Link></li>
-                        <li className="nav-item"><Link href="#" className={`nav-link small fw-semibold ${textClass}`}>Shipping</Link></li>
                     </ul>
                 </li>
             </ul>

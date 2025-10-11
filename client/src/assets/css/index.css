@@ -76,16 +76,16 @@ body {
 }
 
 .sidebar-scroll {
-  width: 280px;
-  min-width: 280px;
-  max-width: 280px;
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
   height: 100%;
   overflow-y: auto;
   flex-shrink: 0;
 }
 
 .devio-section-header-action-btn {
-  padding: 2px 18px;
+  padding: 11px 18px;
 }
 
 /* Body Background Colors */
@@ -105,15 +105,29 @@ input:focus {
 
 /* Card Background Colors */
 .bg-card-light {
-  background-color: rgb(247, 247, 247) !important;
+  background-color: #f2f2f2 !important;
+}
+
+.bg-card-light-v2 {
+  background-color: #f4f4f4 !important;
 }
 
 .bg-card-dark, .bg-dark-secondary {
   background-color: #2a2f33 !important;
 }
 
-.bg-card-light {
-  background-color: #fff !important;
+.bg-card-gray-800 {
+  background-color: #343a40;
+}
+
+.drag-zone {
+  border: 1px dashed #6c757d; 
+  border-radius: .25rem; 
+  padding: 50px;
+  min-height: 495px;
+}
+.drag-zone.drag-over {
+  border-color: #0d6efd; 
 }
 
 .indicator-light {
@@ -131,6 +145,10 @@ input:focus {
 .sidebar-items-container svg {
   color: var(--bs-highlight-color);
   font-size: 25px;
+}
+
+.sidebar-items-container .nav.flex-column li a {
+  margin-left: 45px;
 }
 
 .form-switch .form-check-input {
@@ -315,4 +333,10 @@ body.dark-mode .offcanvas-collapse {
 .devio-auth-page .auth-section-left {
   background-color: #f9fafb;
   padding: 50px 100px !important;
+}
+
+/* Dev Dashboard */
+
+.cpso-dev-dashboard-sidebar-heading {
+  font-size: 25px;
 }

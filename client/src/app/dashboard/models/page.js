@@ -1,0 +1,33 @@
+"use client"
+import SectionHeader from "@/partials/dashboard/SectionHeader"
+import { MdDragIndicator } from "react-icons/md";
+import { useTheme } from "@/context/themeContext";
+import Image from "next/image";
+
+export default function Models () {
+    const { theme } = useTheme(); 
+    const isDark = theme === "dark";
+
+    return (
+        <SectionHeader sectionTitle="Schema" subSectionTitle="Models" btnLink="/dashboard/models/create">
+            {[
+                'Articles',
+                'Posts',
+                'Person',
+            ].map((title, index) => (
+                <div
+                    key={index}
+                    className={`card border-0 shadow-sm my-1 ${isDark ? "bg-card-dark text-white" : "bg-white text-dark"}`}
+                >
+                <div className="card-body d-flex align-items-center justify-content-start gap-3">
+                        <MdDragIndicator size="30" cursor="pointer" className={`indicator-light flex-shrink-0`} />
+                        <div className="d-flex align-items-center gap-2 flex-grow-1">
+                            <Image src="/images/blog.webp" alt="Featured Image" height={40} width={40} style={{borderRadius: '2px'}}/>
+                            <p className="fw-semibold mb-0 lh-sm blog-title">{title}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </SectionHeader>
+    )
+}

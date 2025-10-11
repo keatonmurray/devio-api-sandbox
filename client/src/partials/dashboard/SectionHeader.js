@@ -2,7 +2,7 @@ import { FaPlus } from "react-icons/fa6";
 import { useTheme } from "@/context/themeContext";
 import Link from "next/link";
 
-export default function SectionHeader({children, sectionTitle, subSectionTitle}) {
+export default function SectionHeader({children, sectionTitle, subSectionTitle, btnLink}) {
     const { theme } = useTheme(); 
     const isDark = theme === "dark";
 
@@ -11,10 +11,10 @@ export default function SectionHeader({children, sectionTitle, subSectionTitle})
             <div className="pages px-md-5 px-2 w-100">
                 <div className="row align-items-center justify-content-between">
                     <div className="col-12 col-md-6 mb-3 mb-md-0">
-                    <div className="header-texts">
-                        <h6 className="fw-semibold text-secondary fs-6">{sectionTitle}</h6>
-                        <h5 className="fw-semibold fs-4">{subSectionTitle}</h5>
-                    </div>
+                        <div className="header-texts my-3">
+                            <h6 className="fw-semibold text-secondary fs-6">{sectionTitle}</h6>
+                            <h5 className="fw-semibold fs-4">{subSectionTitle}</h5>
+                        </div>
                     </div>
                     <div className="col-12 col-md-6 d-flex justify-content-md-end gap-2">
                         <form className="flex-grow-1 flex-md-grow-0">
@@ -24,11 +24,9 @@ export default function SectionHeader({children, sectionTitle, subSectionTitle})
                             placeholder="Search ..." 
                             />
                         </form>
-                        <button className="btn btn-primary devio-section-header-action-btn">
-                            <Link href="/dashboard/blogs/create" className="text-decoration-none text-white">
-                                <FaPlus />
-                            </Link>
-                        </button>
+                        <Link href={btnLink || "#"}  className="text-decoration-none text-white btn btn-primary devio-section-header-action-btn" passHref>
+                            <FaPlus />
+                        </Link>
                     </div>
                     <div className={`border-bottom my-3 ${isDark ? 'border-secondary' : ''}`}></div>
                     {children}
