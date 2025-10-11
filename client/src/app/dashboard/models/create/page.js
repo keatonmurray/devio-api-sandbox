@@ -1,11 +1,16 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import SectionHeader from "@/partials/dashboard/SectionHeader";
 import { useTheme } from "@/context/themeContext";
 import { MdDragIndicator } from "react-icons/md";
-import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Image from "next/image";
 import { useState } from "react";
+
+// Dynamically import to disable SSR
+const DragDropContext = dynamic(() => import("@hello-pangea/dnd").then(mod => mod.DragDropContext), { ssr: false });
+const Droppable = dynamic(() => import("@hello-pangea/dnd").then(mod => mod.Droppable), { ssr: false });
+const Draggable = dynamic(() => import("@hello-pangea/dnd").then(mod => mod.Draggable), { ssr: false });
 
 export default function CreateModels() {
     const { theme } = useTheme();
@@ -78,13 +83,13 @@ export default function CreateModels() {
                                                                         ${isDark ? "bg-card-dark text-white" : "bg-light text-dark"}`}
                                                                     style={{
                                                                         cursor: "grab",
-                                                                        opacity: snapshot.isDragging ? 0.6 : 1, // ✅ Visible while dragging
+                                                                        opacity: snapshot.isDragging ? 0.6 : 1, // Visible while dragging
                                                                         transform: snapshot.isDragging ? "scale(1.05)" : "scale(1)",
                                                                         ...provided.draggableProps.style
                                                                     }}
                                                                 >
                                                                     <MdDragIndicator size={20} />
-                                                                    <p className="mb-0">{item}</p>
+                                                                    <p className="mb-0 fw-semibold">{item}</p>
                                                                 </div>
                                                             )}
                                                         </Draggable>
