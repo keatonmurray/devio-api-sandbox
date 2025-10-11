@@ -1,61 +1,139 @@
-"use client"
+"use client";
 
-import SectionHeader from "@/partials/dashboard/SectionHeader"
+import SectionHeader from "@/partials/dashboard/SectionHeader";
 import { useTheme } from "@/context/themeContext";
 import { MdDragIndicator } from "react-icons/md";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Image from "next/image";
+import { useState } from "react";
 
-export default function createModels() {
-    const { theme } = useTheme(); 
+export default function CreateModels() {
+    const { theme } = useTheme();
     const isDark = theme === "dark";
 
-    const inputClass = `form-control ${isDark ? "bg-dark text-white border-secondary" : "bg-white text-dark border-light"}`;
-    const selectClass = `form-select ${isDark ? "bg-dark text-white border-secondary" : "bg-white text-dark border-light"}`;
-    const textareaClass = `form-control ${isDark ? "bg-dark text-white border-secondary" : "bg-white text-dark border-light"}`;
-    
+    const [availableModels, setAvailableModels] = useState(["Posts", "Pages", "Authors", "Media", "Tags"]);
+    const [droppedModels, setDroppedModels] = useState([]);
+
+    const onDragEnd = (result) => {
+        const { source, destination } = result;
+        if (!destination) return;
+
+        // Drag from sidebar -> dropzone
+        if (source.droppableId === "sidebar" && destination.droppableId === "dropzone") {
+            const newItem = availableModels[source.index];
+            if (!droppedModels.includes(newItem)) {
+                setDroppedModels((prev) => [...prev, newItem]);
+                setAvailableModels((prev) => prev.filter((_, i) => i !== source.index));
+            }
+        }
+
+        // Drag from dropzone -> sidebar (PUT BACK)
+        if (source.droppableId === "dropzone" && destination.droppableId === "sidebar") {
+            const restoredItem = droppedModels[source.index];
+            setDroppedModels((prev) => prev.filter((_, i) => i !== source.index));
+            setAvailableModels((prev) => [...prev, restoredItem]);
+        }
+
+        // Reorder inside dropzone
+        if (source.droppableId === "dropzone" && destination.droppableId === "dropzone") {
+            const items = Array.from(droppedModels);
+            const [moved] = items.splice(source.index, 1);
+            items.splice(destination.index, 0, moved);
+            setDroppedModels(items);
+        }
+    };
+
     return (
-         <SectionHeader sectionTitle="Schema" subSectionTitle="Create Models" btnLink="/dashboard/models/create">
-            <div className="row">
-                {/* LEFT COLUMN - FORM */}
-                <div className="col-12 col-md-7">
-                    <div className="my-md-4 my-2">
-                        <div className="drag-zone rounded d-flex align-items-center justify-content-center">
-                            <span className="text-secondary">Drop your models here</span>
+        <SectionHeader sectionTitle="Schema" subSectionTitle="Create Models" btnLink="/dashboard/models/create">
+            <DragDropContext onDragEnd={onDragEnd}>
+                <div className="row">
+                    {/* LEFT COLUMN - DROP ZONE */}
+                    <div className="col-12 col-md-7">
+                        <Droppable droppableId="dropzone">
+                            {(provided) => (
+                                <div
+                                    ref={provided.innerRef}
+                                    {...provided.droppableProps}
+                                    className={`my-md-4 my-2 drag-zone rounded d-flex flex-column align-items-center ${
+                                        droppedModels.length === 0 ? "justify-content-center" : "justify-content-start"
+                                    } p-3 w-100`}
+                                >
+                                    {droppedModels.length === 0 ? (
+                                        <span className="text-secondary">Drop your models here</span>
+                                    ) : (
+                                        <div className="row w-100">
+                                            {droppedModels.map((item, index) => (
+                                                <div key={item} className="col-12 col-md-6">
+                                                    <Draggable draggableId={item} index={index}>
+                                                        {(provided, snapshot) => (
+                                                            <div
+                                                                ref={provided.innerRef}
+                                                                {...provided.draggableProps}
+                                                                {...provided.dragHandleProps}
+                                                                className={`d-flex align-items-center gap-3 p-3 rounded mb-2 
+                                                                    ${isDark ? "bg-card-dark text-white" : "bg-light text-dark"}`}
+                                                                style={{
+                                                                    cursor: "grab",
+                                                                    opacity: snapshot.isDragging ? 0.6 : 1, // ✅ Visible while dragging
+                                                                    transform: snapshot.isDragging ? "scale(1.05)" : "scale(1)",
+                                                                    ...provided.draggableProps.style
+                                                                }}
+                                                            >
+                                                                <MdDragIndicator size={20} />
+                                                                <p className="mb-0">{item}</p>
+                                                            </div>
+                                                        )}
+                                                    </Draggable>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                    </div>
+
+                    {/* RIGHT COLUMN - SIDEBAR MODELS */}
+                    <div className="col-12 col-md-5">
+                        <div className={`my-md-4 my-2 card border-0 p-4 ${isDark ? "bg-card-gray-800 text-white" : "bg-card-light-v2 text-dark"}`}>
+                            <h5 className="d-block fw-semibold mb-1">Models</h5>
+                            <p className="text-secondary text-small mb-3">Drag to add fields</p>
+
+                            <Droppable droppableId="sidebar">
+                                {(provided) => (
+                                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                                        {availableModels.map((title, index) => (
+                                            <Draggable key={title} draggableId={title} index={index}>
+                                                {(provided, snapshot) => (
+                                                    <div
+                                                        ref={provided.innerRef}
+                                                        {...provided.draggableProps}
+                                                        {...provided.dragHandleProps}
+                                                        className={`d-flex align-items-center gap-3 p-3 rounded mb-2 
+                                                            ${isDark ? "bg-card-dark text-white" : "bg-light text-dark"}`}
+                                                        style={{
+                                                            cursor: "grab",
+                                                            opacity: snapshot.isDragging ? 0.6 : 1,
+                                                            transform: snapshot.isDragging ? "scale(1.05)" : "scale(1)",
+                                                            ...provided.draggableProps.style
+                                                        }}
+                                                    >
+                                                        <MdDragIndicator size={20} />
+                                                        <Image src="/images/blog.webp" alt="Icon" height={32} width={32} style={{ borderRadius: "4px" }} />
+                                                        <p className="fw-medium mb-0 lh-sm">{title}</p>
+                                                    </div>
+                                                )}
+                                            </Draggable>
+                                        ))}
+                                        {provided.placeholder}
+                                    </div>
+                                )}
+                            </Droppable>
                         </div>
                     </div>
                 </div>
-
-                {/* RIGHT COLUMN - FIELD TYPES */}
-                <div className="col-12 col-md-5">
-                    <div className={`my-md-4 my-2 card border-0 p-4 ${isDark ? "bg-card-gray-800 text-white" : "bg-card-light-v2 text-dark"}`}>
-                        {/* Sidebar heading */}
-                        <h5 className="d-block fw-semibold mb-1">Models</h5>
-                        <p className="text-secondary text-small mb-3">Drag to add fields</p>
-
-                        {/* Field type items */}
-                        {["Posts", "Pages", "Authors", "Media", "Tags"].map((title, index) => (
-                            <div
-                            key={index}
-                            className={`d-flex align-items-center gap-3 p-3 rounded mb-2 
-                                ${isDark ? "bg-card-dark text-white" : "bg-light text-dark"}`}
-                            style={{ cursor: "grab" }}
-                            >
-                            <MdDragIndicator size={20} className="flex-shrink-0" />
-                            <div className="d-flex align-items-center gap-2 flex-grow-1">
-                                <Image
-                                src="/images/blog.webp"
-                                alt="Featured"
-                                height={32}
-                                width={32}
-                                style={{ borderRadius: "4px" }}
-                                />
-                                <p className="fw-medium mb-0 lh-sm">{title}</p>
-                            </div>
-                        </div>
-                    ))}
-                    </div>
-                </div>
-            </div>
+            </DragDropContext>
         </SectionHeader>
-    )
+    );
 }
