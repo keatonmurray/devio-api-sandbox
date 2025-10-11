@@ -6,6 +6,7 @@
   --bs-button-primary: #6644ff;
   --bs-button-secondary: #4e5ba6;
   --bs-button-tertiary: #fff;
+  --bs-border-radius-3px: 3px;
   --bs-highlight-color: #4e5ba6;
   --bs-text-color-primary: #4e5ba6;
   --bs-text-color-secondary: #646464;
@@ -73,6 +74,10 @@ body {
   background-color: var(--bs-button-tertiary) !important;
   border: 1px #c4c4c4 solid !important;
   border-radius: 50px;
+}
+
+.border-radius-3px {
+  border-radius: var(--bs-border-radius-3px) !important;
 }
 
 .sidebar-scroll {
